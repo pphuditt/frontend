@@ -1,23 +1,18 @@
 import logo from './logo.svg';
+import AirplaneTicketRoundedIcon from '@mui/icons-material/AirplaneTicketRounded';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Paper from '@mui/material/Paper';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Nothing</p>
+      <DeleteIcon/>
+      <Paper>
+        <h>Hello</h>
+        <br/><h>World</h>
+      </Paper>
     </div>
   );
 }
