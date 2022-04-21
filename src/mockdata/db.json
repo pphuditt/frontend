@@ -1,0 +1,490 @@
+{
+  "airport": [
+    {
+      "id": 1,
+      "code": "BKK",
+      "country_code": "THA",
+      "latitude": 13.69269,
+      "longtitude": 100.750465,
+      "name": "Suvarnabhumi Airport",
+      "time_zone": "Asia/Bangkok"
+    },
+    {
+      "id": 2,
+      "code": "DEL",
+      "country_code": "IND",
+      "latitude": 28.55616,
+      "longtitude": 77.100281,
+      "name": "Indira Gandhi International Airport",
+      "time_zone": "Asia/kolkata"
+    },
+    {
+      "id": 3,
+      "code": "FRA",
+      "country_code": "DEU",
+      "latitude": 50.033333,
+      "longtitude": 8.570556,
+      "name": "Frankfurt Airport",
+      "time_zone": "Europe/Berlin"
+    },
+    {
+      "id": 4,
+      "code": "GIG",
+      "country_code": "BRA",
+      "latitude": -22.80533,
+      "longtitude": -43.239499,
+      "name": "Rio de Janeiro/Galeão International Airport",
+      "time_zone": "America/Sao_Paulo"
+    },
+    {
+      "id": 5,
+      "code": "JFK",
+      "country_code": "USA",
+      "latitude": 40.641766,
+      "longtitude": -73.780968,
+      "name": "John F. Kennedy International Airport",
+      "time_zone": "America/New_York"
+    },
+    {
+      "id": 6,
+      "code": "LHR",
+      "country_code": "GBR",
+      "latitude": 51.47002,
+      "longtitude": -0.454295,
+      "name": "Heathrow Airport",
+      "time_zone": "Europe/London"
+    },
+    {
+      "id": 7,
+      "code": "MAD",
+      "country_code": "ESP",
+      "latitude": 40.483936,
+      "longtitude": -3.567952,
+      "name": "Adolfo Suárez Madrid–Barajas Airport",
+      "time_zone": "Europe/Madrid"
+    },
+    {
+      "id": 8,
+      "code": "MIA",
+      "country_code": "USA",
+      "latitude": 25.7933,
+      "longtitude": -80.2906,
+      "name": "Miami International Airport",
+      "time_zone": "America/New_York"
+    },
+    {
+      "id": 9,
+      "code": "NRT",
+      "country_code": "JPN",
+      "latitude": 35.765786,
+      "longtitude": 140.386347,
+      "name": "Narita International Airport",
+      "time_zone": "Asia/Tokyo"
+    },
+    {
+      "id": 10,
+      "code": "SFO",
+      "country_code": "USA",
+      "latitude": 37.615223,
+      "longtitude": -122.389977,
+      "name": "San Fracisco International Airport",
+      "time_zone": "America/Los_Angeles"
+    },
+    {
+      "id": 11,
+      "code": "SYD",
+      "country_code": "AUS",
+      "latitude": -33.947346,
+      "longtitude": 151.179428,
+      "name": "Sydney Airport",
+      "time_zone": "Australia/Sydney"
+    }
+  ],
+  "country": [
+    {
+      "code": "AUS",
+      "name": "Australia",
+      "continent": "AU"
+    },
+    {
+      "code": "BRA",
+      "name": "Brazil",
+      "continent": "SA"
+    },
+    {
+      "code": "DEU",
+      "name": "Germany",
+      "continent": "EU"
+    },
+    {
+      "code": "ESP",
+      "name": "Spain",
+      "continent": "EU"
+    },
+    {
+      "code": "GBR",
+      "name": "United Kingdom",
+      "continent": "EU"
+    },
+    {
+      "code": "IND",
+      "name": "India",
+      "continent": "AS"
+    },
+    {
+      "code": "JPN",
+      "name": "Japan",
+      "continent": "AS"
+    },
+    {
+      "code": "THA",
+      "name": "Thailand",
+      "continent": "AS"
+    },
+    {
+      "code": "USA",
+      "name": "United State",
+      "continent": "NA"
+    }
+  ],
+  "aircraft": [
+    {
+      "ICAO_code": "A21NX",
+      "MSN": "4380",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-ALM"
+    },
+    {
+      "ICAO_code": "A20N",
+      "MSN": "9517",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-DWP"
+    },
+    {
+      "ICAO_code": "A21NX",
+      "MSN": "7813",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-EUC"
+    },
+    {
+      "ICAO_code": "A20N",
+      "MSN": "3482",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-FOI"
+    },
+    {
+      "ICAO_code": "A21NX",
+      "MSN": "1296",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-GWD"
+    },
+    {
+      "ICAO_code": "A359",
+      "MSN": "4279",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-LAG"
+    },
+    {
+      "ICAO_code": "A320",
+      "MSN": "2957",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-QLK"
+    },
+    {
+      "ICAO_code": "A320",
+      "MSN": "3582",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-RTU"
+    },
+    {
+      "ICAO_code": "A20N",
+      "MSN": "5824",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-SNV"
+    },
+    {
+      "ICAO_code": "A359",
+      "MSN": "5938",
+      "deliver_date": "2022-03-28",
+      "first_flight": "2022-03-15",
+      "reg_no": "HS-YNR"
+    }
+  ],
+  "flight": [
+    {
+      "ICAO_code": "",
+      "departure_time": "06:00:00",
+      "fare": 5250,
+      "id": 1,
+      "route_code": "CU100"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "12:00:00",
+      "fare": 5250,
+      "id": 2,
+      "route_code": "CU100"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "07:00:00",
+      "fare": 5435,
+      "id": 3,
+      "route_code": "CU101"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "11:00:00",
+      "fare": 5435,
+      "id": 4,
+      "route_code": "CU101"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "01:00:00",
+      "fare": 25385,
+      "id": 5,
+      "route_code": "CU200"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "17:00:00",
+      "fare": 25385,
+      "id": 6,
+      "route_code": "CU200"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "01:00:00",
+      "fare": 37165,
+      "id": 7,
+      "route_code": "CU201"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "18:00:00",
+      "fare": 37165,
+      "id": 8,
+      "route_code": "CU201"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "02:00:00",
+      "fare": 21710,
+      "id": 9,
+      "route_code": "CU202"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "16:00:00",
+      "fare": 21710,
+      "id": 10,
+      "route_code": "CU202"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "00:00:00",
+      "fare": 23885,
+      "id": 11,
+      "route_code": "CU300"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "11:00:00",
+      "fare": 23885,
+      "id": 12,
+      "route_code": "CU300"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "20:00:00",
+      "fare": 10445,
+      "id": 13,
+      "route_code": "CU301"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "06:00:00",
+      "fare": 10445,
+      "id": 14,
+      "route_code": "CU301"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "22:00:00",
+      "fare": 16520,
+      "id": 15,
+      "route_code": "CU302"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "10:00:00",
+      "fare": 16520,
+      "id": 16,
+      "route_code": "CU302"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "00:00:00",
+      "fare": 16520,
+      "id": 17,
+      "route_code": "CU400"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "18:00:00",
+      "fare": 16520,
+      "id": 18,
+      "route_code": "CU400"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "22:00:00",
+      "fare": 11927,
+      "id": 19,
+      "route_code": "CU500"
+    },
+    {
+      "ICAO_code": "",
+      "departure_time": "07:00:00",
+      "fare": 11927,
+      "id": 20,
+      "route_code": "CU500"
+    }
+  ],
+  "route": [
+    {
+      "code": "CU100",
+      "distance": 2886,
+      "from_airport": "BKK",
+      "taken_time": 300,
+      "to_airport": "NRT"
+    },
+    {
+      "code": "CU101",
+      "distance": 1830,
+      "from_airport": "BKK",
+      "taken_time": 180,
+      "to_airport": "DEL"
+    },
+    {
+      "code": "CU200",
+      "distance": 8660,
+      "from_airport": "BKK",
+      "taken_time": 900,
+      "to_airport": "JFK"
+    },
+    {
+      "code": "CU201",
+      "distance": 9700,
+      "from_airport": "BKK",
+      "taken_time": 960,
+      "to_airport": "MIA"
+    },
+    {
+      "code": "CU202",
+      "distance": 7916,
+      "from_airport": "BKK",
+      "taken_time": 780,
+      "to_airport": "SFO"
+    },
+    {
+      "code": "CU300",
+      "distance": 5946,
+      "from_airport": "BKK",
+      "taken_time": 600,
+      "to_airport": "LHR"
+    },
+    {
+      "code": "CU301",
+      "distance": 5587,
+      "from_airport": "BKK",
+      "taken_time": 540,
+      "to_airport": "FRA"
+    },
+    {
+      "code": "CU302",
+      "distance": 6329,
+      "from_airport": "BKK",
+      "taken_time": 660,
+      "to_airport": "MAD"
+    },
+    {
+      "code": "CU400",
+      "distance": 9991,
+      "from_airport": "BKK",
+      "taken_time": 1020,
+      "to_airport": "GIG"
+    },
+    {
+      "code": "CU500",
+      "distance": 4666,
+      "from_airport": "BKK",
+      "taken_time": 480,
+      "to_airport": "SYD"
+    }
+  ],
+  "promotion": [
+    {
+      "id": "p_001",
+      "title": "สะสมไมล์และส่วนลด",
+      "description": "ยังไม่มีจ้า",
+      "discount_amount": 2000,
+      "end_date": "2020-09-14 23:18:17"
+    },
+    {
+      "id": "p_002",
+      "title": "สะสมไมล์และส่วนลด",
+      "description": "&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultrices bibendum nunc. Sed eleifend sem id rhoncus fringilla. Nullam euismod faucibus lorem, ac fringilla quam eleifend vel. Mauris euismod ullamcorper velit, laoreet elementum lorem pulvinar ut. Nullam suscipit sodales viverra. Duis ac purus eu nisi volutpat mollis et eget tellus. Sed pretium eget sem eu accumsan. Ut fringilla egestas ante quis porttitor. Pellentesque posuere, elit ut feugiat consectetur, sem felis pulvinar elit, vitae rhoncus nisi sem nec purus. Nunc tincidunt ullamcorper aliquet. Vivamus eget varius nisl.\nNullam semper laoreet metus sed congue. Donec blandit leo vel tincidunt sollicitudin. Duis vel ante faucibus, tincidunt mi in, volutpat tortor. Phasellus blandit augue in arcu euismod, in luctus eros blandit. Proin ut eros nulla. Proin bibendum in turpis ac commodo. Vestibulum condimentum purus venenatis ullamcorper malesuada. Vestibulum varius augue at sem aliquam vulputate. Sed commodo tempus dui vel interdum. Quisque quis lobortis augue, ac tempus diam. In sit amet lacus pulvinar, tristique elit ac, tempor dolor. Nam facilisis nisi a leo rhoncus, at semper sapien ultrices. In porta sollicitudin libero a feugiat.\nDonec et auctor mi. Sed nec erat semper, lacinia ante ut, tristique nulla. Mauris egestas ut nulla at pretium. Aenean sapien est, consectetur id tristique quis, ornare vel lorem. Morbi tristique, diam et cursus laoreet, leo ligula sollicitudin nisi, sed imperdiet sem libero eu leo. Aenean et eros velit. Nulla pellentesque mattis convallis. Nunc sit amet posuere augue. Phasellus eget enim eget diam aliquet eleifend. Nullam vitae est quis quam vehicula tincidunt. Aenean neque ipsum, finibus eget ligula sagittis, rhoncus dictum magna.&lt;&#x2F;p&gt; ",
+      "discount_amount": 6000,
+      "end_date": "2020-08-02 23:18:17"
+    },
+    {
+      "id": "p_003",
+      "title": "สะสมไมล์และส่วนลด",
+      "description": "ยังไม่มีจ้า",
+      "discount_amount": 8000,
+      "end_date": "2020-01-14 23:18:17"
+    }
+  ],
+
+  "model" : [
+    {
+      "ICAO_code": "A20N",
+      "name":"Airbus A320NEO",
+      "seats":188,
+      "agent":"Airbus",
+      "speed":521.95
+    },
+    {
+      "ICAO_code": "A21NX",
+      "name":"Airbus A321LR",
+      "seats":218,
+      "agent":"Airbus",
+      "speed":628.83
+    },
+    {
+      "ICAO_code": "A320",
+      "name":"Airbus A302",
+      "seats":188,
+      "agent":"Airbus",
+      "speed":521.95
+    },
+    {
+      "ICAO_code": "A359",
+      "name":"Airbus A350-900",
+      "seats":289,
+      "agent":"Airbus",
+      "speed":647.03
+    }
+  ]
+}
