@@ -1,0 +1,30 @@
+.signin-text {
+    position: absolute;
+    width: 216px;
+    height: 58px;
+    left: 640px;
+    top: 188px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 71px;
+}
+.enteremail {
+    position: absolute;
+    width: 600px;
+    height: 203px;
+    left: 600px;
+    top: 200px;
+}
+.enterpassword {
+    position: absolute;
+    width: 600px;
+    height: 203px;
+    right: 0px;
+    top: 300px;
+}
+.sign-up-textlink{
+    top: 270px;
+}

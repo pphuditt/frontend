@@ -1,18 +1,11 @@
-import logo from './logo.svg';
-import AirplaneTicketRoundedIcon from '@mui/icons-material/AirplaneTicketRounded';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Paper from '@mui/material/Paper';
 import './App.css';
+import Signin from './components/signin/Signin';
+import Signup from './components/signup/Signup';
 
 function App() {
   return (
     <div className="App">
-      <p>Nothing</p>
-      <DeleteIcon/>
-      <Paper>
-        <h>Hello</h>
-        <br/><h>World</h>
-      </Paper>
+        <Signup/>
     </div>
   );
 }
