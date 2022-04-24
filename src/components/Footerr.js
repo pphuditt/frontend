@@ -1,21 +1,23 @@
 import './Footerr.css';
-import React from 'react';
 
-function Footerr(){
-    return(
+import React from 'react';
+import { Grid } from '@mui/material';
+
+function Footerr() {
+    return (
         <div className="footer-container">
-            <div className="footer">
-                <div className="footer-heading footer-1">
-                    <h2>Nglaew Airways</h2>
-                </div>
-                <div className="footer-heading footer-2">
-                    <h2>Contact us</h2>
-                </div>
-                <div className="footer-heading-two">
-                    <h3>0863281080</h3>
-                    <h3>bewithfil@gmail.com</h3>
-                </div>
-            </div>
+            <Grid className='footer' container spacing={3}>
+                <Grid className="footer-heading airway" item xs={4}>
+                    <p>Nglaew Airways</p>
+                </Grid>
+                <Grid className="footer-heading contact" item xs={4}>
+                    <p>Contact us</p>
+                </Grid>
+                <Grid className='footer-heading-two' item xs={4}>
+                    <p>0863281080</p>
+                    <p>bewithfil@gmail.com</p>
+                </Grid>
+            </Grid>
         </div>
     );
 };
