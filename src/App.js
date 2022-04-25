@@ -1,4 +1,12 @@
 import './App.css';
+
+import Signin from './components/signin/Signin';
+import Signup from './components/signup/Signup';
+import Privacy from './components/signup/privacy';
+import Covid from './components/promotion/Covid';
+import Birthday from './components/promotion/Birthday';
+import Mile from './components/promotion/Mile';
+
 import ManagementPage from './Component/ManagementPage';
 import {BrowserRouter as Router,Route, Routes} from 'react-router-dom'; 
 import AirportForm from './Component/Popup/AirportForm';
@@ -15,13 +23,21 @@ import RouteForm from './Component/Popup/RouteForm';
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')
 //                       .getInstantFor('2000-01-01T00:00'));
-// }; 
+// }; >>>>>>> 3e4dc58209565d51389673abdc940059d3679ebb
 
 function App() {
   // timeFunc();
   return (
+
+
     <Router>
       <Routes>
+        <Route path="signin" element={<Signin/>}/>
+        <Route path="signup" element={<Signup/>}/>
+        <Route path="privacy" element={<Privacy/>}/>
+        <Route path="covid" element={<Covid/>}/>
+        <Route path="birthday" element={<Birthday/>}/>
+        <Route path="mile" element={<Mile/>}/>
         <Route path="dashboard/:page" element={<ManagementPage/>}/>
         <Route path='form/airport' element={<AirportForm/>}/>
         <Route path='form/aircraft' element={<AircraftForm/>}/>
@@ -35,6 +51,7 @@ function App() {
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </Router>
+
 
   );
 }
