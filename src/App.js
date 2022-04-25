@@ -19,6 +19,8 @@ import PromotionForm from './Component/Popup/PromotionForm';
 import FIForm from './Component/Popup/FIForm';
 import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
+import ProfilePage from './components/ProfilePage';
+import NotFoundPage from './components/NotFoundPage';
 
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')
@@ -48,6 +50,8 @@ function App() {
         <Route path='form/fi' element={<FIForm/>}/>
         <Route path='form/flight' element={<FlightForm/>}/>
         <Route path='date' element={<DateTime/>}/>
+        <Route path='profile' element={<ProfilePage />} />
+        <Route path='flightNotFound' element={<NotFoundPage />} />
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </Router>
