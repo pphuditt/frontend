@@ -1,0 +1,35 @@
+.footer-container{
+    width: 100%;
+    height: 18%;
+    background-color: #C07D6F;
+    padding: 0.1rem 0 0.1rem 0;
+    position: absolute;
+    bottom:auto;
+}
+
+.footer {
+    font-family: 'Podkova', serif;
+    color: #FFFFFF;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.footer-heading {
+    position: absolute;
+}
+
+.airway {
+    left: 32px;
+}
+
+.contact {
+    left: 250px;
+}
+
+.footer-heading-two{
+    text-align: left;
+    position: absolute;
+    top: 8px;
+    left: 400px;
+    padding-top: 80px;
+}
