@@ -1,0 +1,15 @@
+.main-body {
+    text-align: center;
+}
+
+.alert-icon {
+    height: 79px;
+    position: relative;
+    margin-top: 160px;
+}
+
+.text-not-found {
+    font-size: large;
+    color: #774F39;
+    margin-bottom: 320px;
+}

@@ -1,0 +1,64 @@
+.main-body {
+    text-align: center;
+    margin: 0;
+}
+
+.profile-background {
+    width: 100%;
+    height: 240px;
+    background-color: #D6CCC6;
+}
+
+.profilepic {
+    position: relative;
+    bottom: 80px;
+    height: 152px;
+}
+
+.name {
+    position: relative;
+    bottom: 80px;
+    color: #737373;
+}
+
+.user-detail {
+    position: relative;
+    width: 72%;
+    height: 480px;
+    margin: 0 auto;
+    bottom: 64px;
+
+    text-align: left;
+}
+
+.table {
+    width: 100%;
+    color: #929292;
+    margin-bottom: 24px;
+    margin: 0;
+}
+
+.left-col {
+    width: 24%;
+}
+
+.voucher {
+    background-color: white;
+}
+
+.voucher-header-table {
+    color: white;
+    background-color: #C07D6F;
+}
+
+h2 {
+    color: #737373;
+}
+
+.voucher-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td, th{
+    padding: 8px;
+}
