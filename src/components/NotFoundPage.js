@@ -1,4 +1,4 @@
-import './NotFoundPage.css';
+import '../css/NotFoundPage.css';
 
 import Navbar from './Navbar';
 import Footerr from './Footerr';

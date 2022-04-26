@@ -1,4 +1,4 @@
-import './ProfilePage.css';
+import '../css/ProfilePage.css';
 
 import Navbar from "./Navbar";
 import Footerr from "./Footerr";

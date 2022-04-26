@@ -7,6 +7,9 @@ import Covid from './components/promotion/Covid';
 import Birthday from './components/promotion/Birthday';
 import Mile from './components/promotion/Mile';
 
+import ProfilePage from './components/ProfilePage';
+import NotFoundPage from './components/NotFoundPage';
+
 import ManagementPage from './Component/ManagementPage';
 import {BrowserRouter as Router,Route, Routes} from 'react-router-dom'; 
 import AirportForm from './Component/Popup/AirportForm';
@@ -19,8 +22,6 @@ import PromotionForm from './Component/Popup/PromotionForm';
 import FIForm from './Component/Popup/FIForm';
 import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
-import ProfilePage from './components/ProfilePage';
-import NotFoundPage from './components/NotFoundPage';
 
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')

@@ -1,4 +1,4 @@
-import './Navbar-n.css';
+import '../css/Navbar-n.css';
 import { ReactComponent as YourSvg } from './Untitled-1.svg';
 
 function Navbarn(){
