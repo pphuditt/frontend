@@ -7,10 +7,12 @@ import alert from '../statics/images/notice.svg';
 
 function NotFoundPage() {
   return (
-    <div className='main-body'>
+    <div>
         <Navbar />
-        <img className='alert-icon' src={alert} alt='alert-icon' />
-        <p className='text-not-found'><b>Sorry, flight not found</b></p>
+        <div className="main-body">
+          <img className='alert-icon' src={alert} alt='alert-icon' />
+          <p className='text-not-found'><b>Sorry, flight not found</b></p>
+        </div>
         <Footerr />
     </div>
   );
