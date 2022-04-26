@@ -9,7 +9,7 @@ function NotFoundPage() {
   return (
     <div>
         <Navbar />
-        <div className="main-body">
+        <div className="main-body-notfoundPage">
           <img className='alert-icon' src={alert} alt='alert-icon' />
           <p className='text-not-found'><b>Sorry, flight not found</b></p>
         </div>

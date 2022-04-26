@@ -1,4 +1,4 @@
-.main-body {
+.main-body-profilePage {
     text-align: center;
     margin: 0;
 }
@@ -27,7 +27,7 @@
     height: 480px;
     margin: 0 auto;
     bottom: 64px;
-
+    border: 0;
     text-align: left;
 }
 
@@ -44,6 +44,7 @@
 
 .voucher {
     background-color: white;
+    margin: 0;
 }
 
 .voucher-header-table {

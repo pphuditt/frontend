@@ -1,5 +1,5 @@
 import '../css/Navbar-n.css';
-import { ReactComponent as YourSvg } from './Untitled-1.svg';
+import { ReactComponent as YourSvg } from '../statics/images/Untitled-1.svg';
 
 function Navbarn(){
     return(

@@ -1,6 +1,6 @@
 import '../css/Navbar.css';
-import { ReactComponent as YourSvg } from './Untitled-1.svg';
-import { ReactComponent as UserSvg } from './user.svg';
+import { ReactComponent as YourSvg } from '../statics/images/Untitled-1.svg';
+import { ReactComponent as UserSvg } from '../statics/images/user.svg';
 
 function Navbar() {
     const user_data = {

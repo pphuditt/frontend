@@ -1,13 +1,14 @@
-.main-body {
-    align-items: center;
+.main-body-notfoundPage {
+    text-align: center;
     height: 76vh;
-    background-color: black;
     margin-top: 8vh;
 }
 
 .alert-icon {
     height: 79px;
     position: relative;
+
+    margin-top: 160px;
 }
 
 .text-not-found {
