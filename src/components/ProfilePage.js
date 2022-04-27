@@ -68,7 +68,7 @@ function ProfilePage() {
                         <tr>
                             <th>Promotion</th>
                             <th>Code</th>
-                            <th>Exparation date</th>
+                            <th>Expiration date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,7 +80,7 @@ function ProfilePage() {
                                     <td>{row.expDate}</td>
                                 </tr>
                             );
-                        })}                        
+                        })}
                     </tbody>
                 </table>
             </div>
