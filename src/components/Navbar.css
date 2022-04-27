@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    height: 8vh;
+    min-height: 8vh;
     background: #C07D6F;
     position: absolute;
     top:0;
