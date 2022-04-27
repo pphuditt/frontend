@@ -1,0 +1,17 @@
+.main-body {
+    align-items: center;
+    min-height: 76vh;
+    background-color: black;
+    margin-top: 8vh;
+}
+
+.alert-icon {
+    height: 79px;
+    margin-top: 8vh;
+    position: relative;
+}
+
+.text-not-found {
+    font-size: large;
+    color: #774F39;
+}

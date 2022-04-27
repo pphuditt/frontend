@@ -12,7 +12,7 @@ import { login,model } from "../service/api";
 
 const signIn = () =>{
     console.log("click");
-    console.log(login('disorn.bootso2@gmail.com','juniorkung'));
+    console.log(login('parichaya@gmail.com','12123'));
 };
 
 const signOut = () => {
