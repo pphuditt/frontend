@@ -1,0 +1,23 @@
+.flight-page-whole {
+  width: 100%;
+}
+
+.content-container {
+  width: 100%;
+  /* text-align: center; */
+}
+
+.bg-image {
+  width: 100%;
+}
+
+.card-container {
+  width: 100%;
+  
+  margin: 0 auto;
+  position: relative;
+  bottom: 108px;
+}
+
+
+
