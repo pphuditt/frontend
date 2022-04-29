@@ -3,8 +3,7 @@
     height: 16vh;
     background-color: #C07D6F;
     padding: 0.1rem 0 0.1rem 0;
-    position: absolute;
-    bottom:auto;
+    position: relative;
 }
 
 .footer {
