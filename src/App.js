@@ -23,6 +23,12 @@ import PromotionForm from './Component/Popup/PromotionForm';
 import FIForm from './Component/Popup/FIForm';
 import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
+<<<<<<< HEAD
+=======
+import ProfilePage from './components/ProfilePage';
+import NotFoundPage from './components/NotFoundPage';
+import Flight from './components/Flight';
+>>>>>>> 2628700bede7da24b363ab0aca18725c1b36ad90
 
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')
@@ -54,7 +60,11 @@ function App() {
         <Route path='date' element={<DateTime/>}/>
         <Route path='profile' element={<ProfilePage />} />
         <Route path='flightNotFound' element={<NotFoundPage />} />
+<<<<<<< HEAD
         <Route path='payment' element={<Payment />} />
+=======
+        <Route path='availableFlight' element={<Flight />}></Route>
+>>>>>>> 2628700bede7da24b363ab0aca18725c1b36ad90
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </Router>
