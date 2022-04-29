@@ -39,11 +39,7 @@ function ProfilePage() {
     const fullName = user_data.firstName + " " + user_data.lastName;
 
     return (
-<<<<<<< HEAD
-        <div className='main-body-profile'>
-=======
         <div className='main-body-profilePage'>
->>>>>>> edfe9a54289d0edb0995b18022d9dd1c46105a46
             <Navbar />
             <div className='profile-background' />
             <img className='profilepic' src={profilepic} alt='profilepic' />
