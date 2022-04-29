@@ -9,6 +9,7 @@ import Mile from './components/promotion/Mile';
 
 import ProfilePage from './components/ProfilePage';
 import NotFoundPage from './components/NotFoundPage';
+import Payment from './components/PaymentPage';
 
 import ManagementPage from './Component/ManagementPage';
 import {BrowserRouter as Router,Route, Routes} from 'react-router-dom'; 
@@ -53,6 +54,7 @@ function App() {
         <Route path='date' element={<DateTime/>}/>
         <Route path='profile' element={<ProfilePage />} />
         <Route path='flightNotFound' element={<NotFoundPage />} />
+        <Route path='payment' element={<Payment />} />
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </Router>

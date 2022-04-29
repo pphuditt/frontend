@@ -48,15 +48,15 @@ function ProfilePage() {
                 <table className='table'>
                     <tbody>
                         <tr>
-                            <td className='left-col'><h3>Email</h3></td>
+                            <td className='profile-left-col'><h3>Email</h3></td>
                             <td><p>{user_data.username}</p></td>
                         </tr>
                         <tr>
-                            <td className='left-col'><h3>Birth date</h3></td>
+                            <td className='profile-left-col'><h3>Birth date</h3></td>
                             <td><p>{user_data.dob}</p></td>
                         </tr>
                         <tr>
-                            <td className='left-col'><h3>Total mile</h3></td>
+                            <td className='profile-left-col'><h3>Total mile</h3></td>
                             <td><p>{user_data.totalMile}</p></td>
                         </tr>
                     </tbody>
