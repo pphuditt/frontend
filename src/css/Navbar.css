@@ -1,6 +1,10 @@
 .header {
     width: 100%;
+<<<<<<< HEAD
+    min-height: 8vh;
+=======
     height: 80px;
+>>>>>>> f17681aaefa5d9f983e68d794979190481075d5a
     background: #C07D6F;
     position: absolute;
     top:0;

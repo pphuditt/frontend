@@ -3,7 +3,12 @@
     height: 16vh;
     background-color: #C07D6F;
     padding: 0.1rem 0 0.1rem 0;
+<<<<<<< HEAD
+    position: absolute;
+    bottom:auto;
+=======
     position: relative;
+>>>>>>> f17681aaefa5d9f983e68d794979190481075d5a
 }
 
 .footer {
