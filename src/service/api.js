@@ -3,11 +3,11 @@ import authHeader from './AuthProvider';
 
 
 const auth = axios.create({
-    baseURL : `http://localhost:8080/auth`
+    baseURL : `https://afternoon-brook-99525.herokuapp.com/auth`
 })
 
 const api = axios.create({
-    baseURL : `http://localhost:8080/api`
+    baseURL : `https://afternoon-brook-99525.herokuapp.com/api`
 })
 
 const login = (username, password) => {
@@ -26,13 +26,7 @@ const login = (username, password) => {
   };
 
 const model = () => {
-    return api.post(`aircraft`,{
-        regNum: "AVDE",
-        ICAOCode: "A320",
-        MSN: "1321",
-        firstFlight: "2022-08-07",
-        deliverDate: "2022-08-07"
-    },
+    return api.get(`/user/profile`,
     {
         headers: authHeader()
     }

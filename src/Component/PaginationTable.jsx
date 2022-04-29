@@ -14,6 +14,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import styled from '@emotion/styled';
 import CustomDialog from './CustomDialog.jsx';
 import authHeader from '../service/AuthProvider.js';
+import {api} from '../service/api';
 import moment from 'moment';
 
 const LoadingIcon = styled(CircularProgress)`
@@ -31,7 +32,7 @@ export default function StickyHeadTable(props) {
 
   const readData = (pageName) => {
     console.log(`http://localhost:8080/api/${pageName}`);
-    axios.get(`http://localhost:8080/api/${pageName}`,{
+    api.get(`${pageName}`,{
       headers : authHeader()
     })
       .then((res) => {  
@@ -57,7 +58,7 @@ export default function StickyHeadTable(props) {
   const deleteItem = (id) => {
     const isConfirm = window.confirm(`ต้องการที่จะลบข้อมูลเกี่ยวกับ ${id}  ดังกล่าวใช่หรือไม`);
     if(isConfirm){
-      axios.delete(`http://localhost:8080/api/${props.page}/${id}`,{
+      api.delete(`${props.page}/${id}`,{
         headers : authHeader()
       })
       .then((res) =>{

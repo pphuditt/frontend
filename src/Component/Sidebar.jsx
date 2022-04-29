@@ -12,7 +12,7 @@ const Sidebar = () => {
     return (
         <div className='sidebar'>
             <div className='top'>
-                <AttributionIcon className='logo'/>
+                <AttributionIcon className='sidebar-logo'/>
             </div>
             <div className='center'>
                 <ul>
