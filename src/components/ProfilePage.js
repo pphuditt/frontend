@@ -1,4 +1,4 @@
-import './ProfilePage.css';
+import '../css/ProfilePage.css';
 
 import Navbar from "./Navbar";
 import Footerr from "./Footerr";
@@ -39,7 +39,7 @@ function ProfilePage() {
     const fullName = user_data.firstName + " " + user_data.lastName;
 
     return (
-        <div className='main-body-profile'>
+        <div className='main-body-profilePage'>
             <Navbar />
             <div className='profile-background' />
             <img className='profilepic' src={profilepic} alt='profilepic' />
@@ -48,15 +48,15 @@ function ProfilePage() {
                 <table className='table'>
                     <tbody>
                         <tr>
-                            <td className='left-col'><h3>Email</h3></td>
+                            <td className='profile-left-col'><h3>Email</h3></td>
                             <td><p>{user_data.username}</p></td>
                         </tr>
                         <tr>
-                            <td className='left-col'><h3>Birth date</h3></td>
+                            <td className='profile-left-col'><h3>Birth date</h3></td>
                             <td><p>{user_data.dob}</p></td>
                         </tr>
                         <tr>
-                            <td className='left-col'><h3>Total mile</h3></td>
+                            <td className='profile-left-col'><h3>Total mile</h3></td>
                             <td><p>{user_data.totalMile}</p></td>
                         </tr>
                     </tbody>
@@ -68,7 +68,7 @@ function ProfilePage() {
                         <tr>
                             <th>Promotion</th>
                             <th>Code</th>
-                            <th>Exparation date</th>
+                            <th>Expiration date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,7 +80,7 @@ function ProfilePage() {
                                     <td>{row.expDate}</td>
                                 </tr>
                             );
-                        })}                        
+                        })}
                     </tbody>
                 </table>
             </div>

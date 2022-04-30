@@ -1,4 +1,4 @@
-import './Footerr.css';
+import '../css/Footerr.css';
 
 import React from 'react';
 import { Grid } from '@mui/material';

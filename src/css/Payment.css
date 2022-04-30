@@ -1,0 +1,92 @@
+.payment-main-body {
+    text-align: center;
+    margin: 0;
+}
+
+.payment-page-background {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.payment-content {
+    margin: 0 16px;
+}
+
+.payment-card {
+    padding: 24px 24px;
+    text-align: left;
+}
+
+.plane-icon {
+    position: relative;
+    left: 1%;
+    top: 16px;
+}
+
+.payment-flight-detail {
+    width: 80%;
+    position: relative;
+    left: 12%;
+    bottom: 40px;
+    line-height: 8px;
+    color: #717075;
+}
+
+.payment-country {
+    font-size: 20px;
+}
+
+.calendar-pic {
+    float: left;
+    margin-right: 10px;
+}
+
+.payment-flight-date {
+    margin-top: 28px;
+}
+
+.payment-airport-start {
+    margin-top: 28px;
+}
+
+.payment-time-abroad {
+    position: absolute;
+    left: 24px;
+    top: 208px;
+}
+
+.payment-price-header {
+    text-align: left;
+    position: relative;
+    left: 16px;
+    width: 80%;
+}
+
+.payment-price-detail-row {
+    padding: 8px;
+    margin: 0;
+}
+
+.price-detail {
+    margin: 0;
+    font-weight: bold;
+}
+
+.rightCol {
+    text-align: right;
+}
+
+.price-detail-table {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 16px;
+    text-align: left;
+}
+
+.discount {
+    color: #DF3131;
+}
+
+.voucher-code-textfield {
+    margin: 100px 0;
+}
