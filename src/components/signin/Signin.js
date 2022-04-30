@@ -12,10 +12,13 @@ import Signup from "../signup/Signup";
 //import "./Signin.css";
 import { TextField, Grid, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { login } from "../../service/api";
+import { auth } from "../../service/api";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
+
+  const navigate = useNavigate();
   const [emailInput, setEmailInput]=useState('');
   const handleEmailInputChange = e =>{
     console.log(e.target.value);
@@ -47,8 +50,16 @@ function Signin() {
   };
 
   const signIn = () =>{
-    console.log("click");
-    console.log(login(emailInput,values.password));
+    auth.post('/',{
+      username:emailInput,
+      password:values.password,
+    })
+    .then((response) => {
+      if (response.data.jwt) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+        navigate('../availableflight');
+      }
+    });
 };
 
   return (
@@ -154,7 +165,6 @@ function Signin() {
                   },
                   fontFamily: "Podkova, serif",
                 }}
-                onClick={login}
               >
                 Log in
               </Button>
