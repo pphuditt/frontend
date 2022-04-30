@@ -9,26 +9,23 @@ import Typography from "@mui/material/Typography";
 
 function Birthday() {
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <Navbar />
       <BSvg style={{ width: "100%", height: "100%" }} />
       <Grid container display="row" rowSpacing={4}>
-        <div>
+        <div style={{ position: "relative", margin: "0 auto", textAlign: "left" }}>
           <Box
-            marginLeft={20}
-            marginRight={20}
-            marginTop={23}
-            sx={{ maxWidth: 1000, maxHeight: 1000 }}
+            marginTop={10}
+            sx={{ minWidth: 1000, maxHeight: 1000,}}
           >
+            <Grid container display="row" rowSpacing={4}>
             <Grid item xs={12}>
               <text
                 style={{
                   position: "absolute",
-                  float: "none",
                   textAligVertical: "center",
                   textAlign: "center",
-                  width: "84%",
-                  top: "77%",
+                  width: "100%",
                   fontSize: "50px",
                   fontFamily: "Podkova, serif",
                 }}
@@ -37,7 +34,7 @@ function Birthday() {
               </text>
             </Grid>
             <Grid item xs={12}>
-              <Card style={{ marginLeft: "30%", width: "1000px" }}>
+              <Card style={{ marginTop:"5%"}}>
                 <CardContent>
                   <Typography
                     marginLeft={2}
@@ -87,7 +84,7 @@ function Birthday() {
                   sx={{
                     marginLeft: "55%",
                     marginTop: "3%",
-                    width: "50%",
+                    float:"right",
                     backgroundColor: "#00A944",
                     borderColor: "#00A944",
                     "&:active": {
@@ -106,6 +103,7 @@ function Birthday() {
                   กดเพื่อรับโค้ด
                 </Button>
               </Grid>
+            </Grid>
             </Grid>
           </Box>
         </div>

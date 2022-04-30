@@ -10,27 +10,23 @@ import Typography from "@mui/material/Typography";
 
 function Covid() {
   return (
-    <div>
+    <div  style={{ textAlign: "center" }}>
       <Navbar />
       <CSvg style={{ width: "100%", height: "100%" }} />
-      <Grid container display="row" rowSpacing={4}>
-        <div>
+      <Grid container display="row" rowSpacing={5}>
+        <div style={{ position: "relative", margin: "0 auto", textAlign: "left" }}>
           <Box
-            marginLeft={20}
-            marginRight={20}
-            marginTop={23}
-            sx={{ maxWidth: 1000, maxHeight: 1000}
-          }
+            marginTop={10}
+            sx={{ maxWidth: 1000, maxHeight: 1000}}
           >
+          <Grid container display="row" rowSpacing={4}>
             <Grid item xs={12}>
               <text
                 style={{
                   position: "absolute",
-                  float: "none",
                   textAligVertical: "center",
                   textAlign: "center",
-                  width: "80%",
-                  top: "77%",
+                  width: "100%",
                   fontSize: "50px",
                   fontFamily: "Podkova, serif",
                 }}
@@ -39,7 +35,7 @@ function Covid() {
               </text>
             </Grid>
             <Grid item xs={12}>
-              <Card style={{ marginLeft: "30%", width: "1000px" }}>
+              <Card style={{  marginTop:"5%", width: "1000px" }}>
                 <CardContent>
                   <Typography
                     marginLeft={2}
@@ -97,8 +93,8 @@ function Covid() {
                   variant="contained"
                   aria-label="outlined primary button group"
                   style={{
-                    marginLeft: "79%",
                     marginTop: "3%",
+                    float: "right",
                     width: "51.35%",
                   }}
                 >
@@ -161,6 +157,7 @@ function Covid() {
                   </Button>
                 </ButtonGroup>
               </Grid>
+            </Grid>
             </Grid>
           </Box>
         </div>
