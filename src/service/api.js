@@ -21,7 +21,7 @@ const login = (username, password) => {
           localStorage.setItem("user", JSON.stringify(response.data));
         }
   
-        return response.data;
+        return response;
       });
   };
 
