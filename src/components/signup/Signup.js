@@ -13,20 +13,20 @@ function Signup() {
   const [bd_date, setBDDate] = useState(moment());
 
   return (
-    <div>
-      <Grid container display="row" rowSpacing={6}>
+    <div style={{ textAlign: "center" }}>
+      <Grid container display="row" rowSpacing={7}>
         <Grid item xs={12}>
           <Navbarn />
         </Grid>
-        <div>
-          <Box marginLeft={75} marginTop={25} sx={{ maxWidth: 700 }}>
-            <Grid container display="row" rowSpacing={5}>
+        <div style={{ position: "relative", margin: "0 auto", textAlign: "left" }}>
+          <Box marginTop={25} sx={{ maxWidth: 700 }}>
+            <Grid container display="row" rowSpacing={4}>
               <Grid item xs={12}>
                 <text
                   style={{
                     position: "absolute",
-                    width: "31%",
-                    top: "15%",
+                    width: "100%",
+                    top: "17%",
                     fontSize: "50px",
                     fontFamily: 'Podkova, serif',
                   }}
@@ -98,9 +98,7 @@ function Signup() {
                 <Link
                   to="/privacy"
                   style={{
-                    position: "absolute",
-                    left: "61.5%",
-                    top: "83%",
+                    float:"right",
                     fontSize: "15px",
                     fontFamily: 'Podkova, serif',
                     color: "rgb(0, 38, 255)",

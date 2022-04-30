@@ -6,6 +6,7 @@ import Privacy from './components/signup/privacy';
 import Covid from './components/promotion/Covid';
 import Birthday from './components/promotion/Birthday';
 import Mile from './components/promotion/Mile';
+import Flight from './components/Flight.js'
 
 import ProfilePage from './components/ProfilePage';
 import NotFoundPage from './components/NotFoundPage';
