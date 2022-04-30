@@ -1,7 +1,6 @@
-.main-body {
-    align-items: center;
-    min-height: 76vh;
-    background-color: black;
+.main-body-notfoundPage {
+    text-align: center;
+    height: 76vh;
     margin-top: 8vh;
 }
 
@@ -9,6 +8,8 @@
     height: 79px;
     margin-top: 8vh;
     position: relative;
+
+    margin-top: 160px;
 }
 
 .text-not-found {

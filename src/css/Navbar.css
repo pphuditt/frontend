@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    min-height: 8vh;
+    height: 80px;
     background: #C07D6F;
     position: absolute;
     top:0;
@@ -29,6 +29,7 @@
     top: 8px;
     right: 88px;
 }
+
 .user-name{
     font-family: 'Podkova', serif;
 }
