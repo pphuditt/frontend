@@ -76,7 +76,9 @@ function Payment() {
                                     </tr>
                                 </table>
                             </Card>
+                            <div className='payment-page-spacing' />
                             <TextField className='voucher-code-textfield' fullWidth />
+                            <div className='payment-page-spacing' />
                             <Button fullWidth>something</Button>
                         </div>
                     </Grid>

@@ -23,6 +23,7 @@ import PromotionForm from './Component/Popup/PromotionForm';
 import FIForm from './Component/Popup/FIForm';
 import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
+import Flight from './components/Flight.js';
 
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')
