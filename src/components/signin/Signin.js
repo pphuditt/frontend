@@ -11,9 +11,12 @@ import Footerr from "../Footerr";
 import Signup from "../signup/Signup";
 //import "./Signin.css";
 import { TextField, Grid, Box, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from '../../service/api';
 
 function Signin() {
+
+  const navigate = useNavigate();
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -35,6 +38,21 @@ function Signin() {
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const login = () => {
+    auth
+    .post('/',{
+      username: ,
+      password: values.password
+    })
+    .then((response) => {
+      if (response.data.jwt) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+      }
+
+      return response.data;
+    });
   };
 
   return (
@@ -123,6 +141,7 @@ function Signin() {
                   },
                   fontFamily: "Podkova, serif",
                 }}
+                onClick={login}
               >
                 Log in
               </Button>
