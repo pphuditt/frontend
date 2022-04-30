@@ -46,27 +46,10 @@ function Signin() {
     event.preventDefault();
   };
 
-<<<<<<< HEAD
-  const login = () => {
-    auth
-    .post('/',{
-      username: ,
-      password: values.password
-    })
-    .then((response) => {
-      if (response.data.jwt) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-      }
-
-      return response.data;
-    });
-  };
-=======
   const signIn = () =>{
     console.log("click");
     console.log(login(emailInput,values.password));
 };
->>>>>>> 92f1b7b82c179f531f33a14a5b926bd70065fa78
 
   return (
     <div style={{textAlign:"center"}}>
