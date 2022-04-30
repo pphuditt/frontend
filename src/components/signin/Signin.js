@@ -12,8 +12,16 @@ import Signup from "../signup/Signup";
 //import "./Signin.css";
 import { TextField, Grid, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { login } from "../../service/api";
+import { useState } from "react";
 
 function Signin() {
+  const [emailInput, setEmailInput]=useState('');
+  const handleEmailInputChange = e =>{
+    console.log(e.target.value);
+    setEmailInput(e.target.value);
+  }
+
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -24,6 +32,7 @@ function Signin() {
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
+    console.log(event.target.value);
   };
 
   const handleClickShowPassword = () => {
@@ -37,21 +46,27 @@ function Signin() {
     event.preventDefault();
   };
 
+  const signIn = () =>{
+    console.log("click");
+    console.log(login(emailInput,values.password));
+};
+
   return (
-    <div>
+    <div style={{textAlign:"center"}}>
       <Grid container display="row" rowSpacing={29.1}>
         <Grid item xs={12}>
           <Navbarn />
         </Grid>
-        <Box marginLeft={90} marginTop={40} sx={{ maxWidth: 500 }}>
+        <div style={{position:"relative", margin:"0 auto",textAlign:"left"}}>
+        <Box marginTop={40} sx={{ maxWidth: 500 }}>
           <Grid container display="row" rowSpacing={3}>
             <Grid item xs={12}>
               <div>
                 <text
                   style={{
                     position: "absolute",
-                    width: "31%",
-                    top: "27%",
+                    width: "100%",
+                    top: "30%",
                     fontSize: "50px",
                     fontFamily: "Podkova, serif",
                   }}
@@ -64,8 +79,11 @@ function Signin() {
             <Grid item xs={12}>
               <TextField
                 fullWidth
+                inputProps={{pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"}}
+                type="text"
                 className="enteremail"
-                id="demo-helper-text-aligned-1"
+                value={emailInput}
+                onChange={handleEmailInputChange}
                 label="Enter your email address"
               />
             </Grid>
@@ -103,8 +121,21 @@ function Signin() {
                 />
               </FormControl>
             </Grid>
+            
             <Grid item xs={12}>
+            <Link 
+              style={{
+                //position: "absolute",
+                float: "right",
+                fontSize: "15px",
+                fontFamily: 'Podkova, serif',
+                color: "rgb(0, 38, 255)",
+              }}
+              to="/signup" className="sign-up-textlink">
+                Sign up
+              </Link>
               <Button
+                onClick={signIn}
                 fullWidth
                 variant="contained"
                 sx={{
@@ -126,21 +157,13 @@ function Signin() {
               >
                 Log in
               </Button>
-              <Link 
-              style={{
-                position: "absolute",
-                left: "60%",
-                top: "51.5%",
-                fontSize: "15px",
-                fontFamily: 'Podkova, serif',
-                color: "rgb(0, 38, 255)",
-              }}
-              to="/signup" className="sign-up-textlink">
-                Sign up
-              </Link>
+              
             </Grid>
+            
+            
           </Grid>
         </Box>
+        </div>
         <Grid item xs={12}>
           <Footerr />
         </Grid>

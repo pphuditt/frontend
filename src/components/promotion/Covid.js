@@ -8,7 +8,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-
 function Covid() {
   return (
     <div>
@@ -20,7 +19,8 @@ function Covid() {
             marginLeft={20}
             marginRight={20}
             marginTop={23}
-            sx={{ maxWidth: 1000, maxHeight: 1000 }}
+            sx={{ maxWidth: 1000, maxHeight: 1000}
+          }
           >
             <Grid item xs={12}>
               <text
@@ -97,7 +97,7 @@ function Covid() {
                   variant="contained"
                   aria-label="outlined primary button group"
                   style={{
-                    marginLeft: "55%",
+                    marginLeft: "79%",
                     marginTop: "3%",
                     width: "51.35%",
                   }}
@@ -116,12 +116,13 @@ function Covid() {
                         borderColor: "#00672a",
                         boxShadow: "none",
                       },
-                      fontFamily: 'Podkova, serif',
+                      fontFamily: "Podkova, serif",
                     }}
                   >
                     รับโค้ดส่วนลดไปยุโรป
                   </Button>
-                  <Button sx={{
+                  <Button
+                    sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
                       "&:active": {
@@ -134,9 +135,13 @@ function Covid() {
                         borderColor: "#00672a",
                         boxShadow: "none",
                       },
-                      fontFamily: 'Podkova, serif',
-                    }}>รับโค้ดส่วนลดไปอเมริกา</Button>
-                  <Button sx={{
+                      fontFamily: "Podkova, serif",
+                    }}
+                  >
+                    รับโค้ดส่วนลดไปอเมริกา
+                  </Button>
+                  <Button
+                    sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
                       "&:active": {
@@ -149,8 +154,11 @@ function Covid() {
                         borderColor: "#00672a",
                         boxShadow: "none",
                       },
-                      fontFamily: 'Podkova, serif',
-                    }}>รับโค้ดส่วนลดไปเอเชีย</Button>
+                      fontFamily: "Podkova, serif",
+                    }}
+                  >
+                    รับโค้ดส่วนลดไปเอเชีย
+                  </Button>
                 </ButtonGroup>
               </Grid>
             </Grid>
