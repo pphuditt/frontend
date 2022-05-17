@@ -7,10 +7,37 @@ import DateAdapter from "@mui/lab/AdapterMoment";
 import moment from "moment";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Privacy from "./privacy";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../service/api";
 
 function Signup() {
+  const navigate = useNavigate();
   const [bd_date, setBDDate] = useState(moment());
+  const [emailInput, setEmailInput] = useState("");
+  const [passInput, setPassInput] = useState("");
+  const [cPassInput, setCpassInput] = useState("");
+  const [fNameInput, setFnameInput] = useState("");
+  const [lNameInput, setLnameInput] = useState("");
+  //const dateForm = new Date(bd_date._d);
+
+  const signUp = () => {
+    if (cPassInput !== passInput) {
+      alert("password does not match !!");
+      return;
+    }
+    api
+      .post("user", {
+        username: emailInput,
+        password: passInput,
+        firstName: fNameInput,
+        lastName: lNameInput,
+        DOB: bd_date.format("YYYY-MM-DD"),
+        //dateForm.getFullYear()+'-'+(dateForm.getMonth() + 1)+'-'+dateForm.getDate()
+      })
+      .then((response) => {
+        navigate("../signin");
+      });
+  };
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -18,7 +45,9 @@ function Signup() {
         <Grid item xs={12}>
           <Navbarn />
         </Grid>
-        <div style={{ position: "relative", margin: "0 auto", textAlign: "left" }}>
+        <div
+          style={{ position: "relative", margin: "0 auto", textAlign: "left" }}
+        >
           <Box marginTop={25} sx={{ maxWidth: 700 }}>
             <Grid container display="row" rowSpacing={4}>
               <Grid item xs={12}>
@@ -28,7 +57,7 @@ function Signup() {
                     width: "100%",
                     top: "17%",
                     fontSize: "50px",
-                    fontFamily: 'Podkova, serif',
+                    fontFamily: "Podkova, serif",
                   }}
                 >
                   Sign up
@@ -38,6 +67,14 @@ function Signup() {
                 <TextField
                   required
                   fullWidth
+                  inputProps={{
+                    pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$",
+                  }}
+                  value={emailInput}
+                  onChange={(newValue) => {
+                    console.log(newValue.target.value);
+                    setEmailInput(newValue.target.value);
+                  }}
                   className="enteremailaddress"
                   id="emaila-required"
                   label="Enter your email address"
@@ -46,7 +83,13 @@ function Signup() {
               <Grid item xs={12}>
                 <TextField
                   required
+                  type="password"
                   fullWidth
+                  value={passInput}
+                  onChange={(newValue) => {
+                    console.log(newValue.target.value);
+                    setPassInput(newValue.target.value);
+                  }}
                   className="enterepassword"
                   id="pass-required"
                   label="Enter your password"
@@ -56,6 +99,12 @@ function Signup() {
                 <TextField
                   required
                   fullWidth
+                  type="password"
+                  value={cPassInput}
+                  onChange={(newValue) => {
+                    console.log(newValue.target.value);
+                    setCpassInput(newValue.target.value);
+                  }}
                   className="confirmpassword"
                   id="cpass-required"
                   label="Confirm your password"
@@ -65,6 +114,11 @@ function Signup() {
                 <TextField
                   required
                   fullWidth
+                  value={fNameInput}
+                  onChange={(newValue) => {
+                    console.log(newValue.target.value);
+                    setFnameInput(newValue.target.value);
+                  }}
                   className="firstName"
                   id="firstname-required"
                   label="First name"
@@ -74,6 +128,11 @@ function Signup() {
                 <TextField
                   required
                   fullWidth
+                  value={lNameInput}
+                  onChange={(newValue) => {
+                    console.log(newValue.target.value);
+                    setLnameInput(newValue.target.value);
+                  }}
                   className="lastName"
                   id="lastname-required"
                   label="Last name"
@@ -85,6 +144,7 @@ function Signup() {
                     label="Birth day"
                     value={bd_date}
                     onChange={(newValue) => {
+                      console.log(newValue._d);
                       setBDDate(newValue);
                     }}
                     renderInput={(params) => (
@@ -98,9 +158,9 @@ function Signup() {
                 <Link
                   to="/privacy"
                   style={{
-                    float:"right",
+                    float: "right",
                     fontSize: "15px",
-                    fontFamily: 'Podkova, serif',
+                    fontFamily: "Podkova, serif",
                     color: "rgb(0, 38, 255)",
                   }}
                 >
@@ -109,6 +169,7 @@ function Signup() {
                 <Button
                   variant="contained"
                   fullWidth
+                  onClick={signUp}
                   sx={{
                     backgroundColor: "#C07D6F",
                     borderColor: "#C07D6F",
@@ -123,7 +184,7 @@ function Signup() {
                       borderColor: "#f3a999",
                       boxShadow: "none",
                     },
-                    fontFamily: 'Podkova, serif',
+                    fontFamily: "Podkova, serif",
                   }}
                 >
                   Create account
