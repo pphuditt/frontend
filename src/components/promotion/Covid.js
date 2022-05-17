@@ -8,29 +8,25 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-
 function Covid() {
   return (
-    <div>
+    <div  style={{ textAlign: "center" }}>
       <Navbar />
       <CSvg style={{ width: "100%", height: "100%" }} />
-      <Grid container display="row" rowSpacing={4}>
-        <div>
+      <Grid container display="row" rowSpacing={5}>
+        <div style={{ position: "relative", margin: "0 auto", textAlign: "left" }}>
           <Box
-            marginLeft={20}
-            marginRight={20}
-            marginTop={23}
-            sx={{ maxWidth: 1000, maxHeight: 1000 }}
+            marginTop={10}
+            sx={{ maxWidth: 1000, maxHeight: 1000}}
           >
+          <Grid container display="row" rowSpacing={4}>
             <Grid item xs={12}>
               <text
                 style={{
                   position: "absolute",
-                  float: "none",
                   textAligVertical: "center",
                   textAlign: "center",
-                  width: "80%",
-                  top: "77%",
+                  width: "100%",
                   fontSize: "50px",
                   fontFamily: "Podkova, serif",
                 }}
@@ -39,7 +35,7 @@ function Covid() {
               </text>
             </Grid>
             <Grid item xs={12}>
-              <Card style={{ marginLeft: "30%", width: "1000px" }}>
+              <Card style={{  marginTop:"5%", width: "1000px" }}>
                 <CardContent>
                   <Typography
                     marginLeft={2}
@@ -97,8 +93,8 @@ function Covid() {
                   variant="contained"
                   aria-label="outlined primary button group"
                   style={{
-                    marginLeft: "55%",
                     marginTop: "3%",
+                    float: "right",
                     width: "51.35%",
                   }}
                 >
@@ -116,12 +112,13 @@ function Covid() {
                         borderColor: "#00672a",
                         boxShadow: "none",
                       },
-                      fontFamily: 'Podkova, serif',
+                      fontFamily: "Podkova, serif",
                     }}
                   >
                     รับโค้ดส่วนลดไปยุโรป
                   </Button>
-                  <Button sx={{
+                  <Button
+                    sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
                       "&:active": {
@@ -134,9 +131,13 @@ function Covid() {
                         borderColor: "#00672a",
                         boxShadow: "none",
                       },
-                      fontFamily: 'Podkova, serif',
-                    }}>รับโค้ดส่วนลดไปอเมริกา</Button>
-                  <Button sx={{
+                      fontFamily: "Podkova, serif",
+                    }}
+                  >
+                    รับโค้ดส่วนลดไปอเมริกา
+                  </Button>
+                  <Button
+                    sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
                       "&:active": {
@@ -149,10 +150,14 @@ function Covid() {
                         borderColor: "#00672a",
                         boxShadow: "none",
                       },
-                      fontFamily: 'Podkova, serif',
-                    }}>รับโค้ดส่วนลดไปเอเชีย</Button>
+                      fontFamily: "Podkova, serif",
+                    }}
+                  >
+                    รับโค้ดส่วนลดไปเอเชีย
+                  </Button>
                 </ButtonGroup>
               </Grid>
+            </Grid>
             </Grid>
           </Box>
         </div>
