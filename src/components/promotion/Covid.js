@@ -7,6 +7,17 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { api } from "../../service/api";
+
+const voucher= (id) =>{
+  api.post("voucher",{
+    promotionId: id
+  })
+  .then((response)=>{
+    if(response.status===200) alert("แลกแล้ว");
+    else alert("แลกไม่ได้จ้า");
+  });
+};
 
 function Covid() {
   return (
@@ -53,7 +64,7 @@ function Covid() {
                     variant="h6"
                     color="text.secondary"
                   >
-                    ระยะเวลาในการจอง : <br />
+                    ระยะเวลาในการจอง : 2100-01-01<br />
                     รายละเอียดส่วนลด : ทวีปยุโรป ส่วนลด 5,000THB <br />
                   </Typography>
                   <Typography
@@ -99,6 +110,9 @@ function Covid() {
                   }}
                 >
                   <Button
+                    onClick ={()=>{
+                       voucher("p_005");
+                    }}
                     sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
@@ -118,6 +132,9 @@ function Covid() {
                     รับโค้ดส่วนลดไปยุโรป
                   </Button>
                   <Button
+                  onClick ={()=>{
+                    voucher("p_006");
+                 }}
                     sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
@@ -137,6 +154,9 @@ function Covid() {
                     รับโค้ดส่วนลดไปอเมริกา
                   </Button>
                   <Button
+                  onClick ={()=>{
+                    voucher("p_007");
+                 }}
                     sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",

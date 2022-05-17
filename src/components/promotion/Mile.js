@@ -6,6 +6,18 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { api } from "../../service/api";
+import ButtonGroup from "@mui/material/ButtonGroup";
+
+const voucher= (id) =>{
+  api.post("voucher",{
+    promotionId: id
+  })
+  .then((response)=>{
+    if(response.status===200) alert("แลกแล้ว");
+    else alert("แลกไม่ได้จ้า");
+  });
+};
 
 function Mile() {
   return (
@@ -54,7 +66,7 @@ function Mile() {
                       variant="h6"
                       color="text.secondary"
                     >
-                      ระยะเวลาในการจอง : <br />
+                      ระยะเวลาในการจอง : 2100-01-01<br />
                       รายละเอียดส่วนลด : 50,000 ไมล์ รับส่วนลด 5,000 THB <br />
                     </Typography>
                     <Typography
@@ -90,11 +102,20 @@ function Mile() {
                   </CardContent>
                 </Card>
                 <Grid item xs={12}>
+                <ButtonGroup
+                  variant="contained"
+                  aria-label="outlined primary button group"
+                  style={{
+                    marginTop: "3%",
+                    float: "right",
+                    width: "48.58%",
+                  }}
+                >
                   <Button
-                    variant="contained"
+                    onClick ={()=>{
+                       voucher("p_002");
+                    }}
                     sx={{
-                      marginTop: "3%",
-                      float: "right",
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
                       "&:active": {
@@ -110,8 +131,53 @@ function Mile() {
                       fontFamily: "Podkova, serif",
                     }}
                   >
-                    กดเพื่อรับโค้ด
+                    แลกโค้ด 50,000 ไมล์
                   </Button>
+                  <Button
+                  onClick ={()=>{
+                    voucher("p_003");
+                 }}
+                    sx={{
+                      backgroundColor: "#00A944",
+                      borderColor: "#00A944",
+                      "&:active": {
+                        boxShadow: "none",
+                        backgroundColor: "#00A944",
+                        borderColor: "#00A944",
+                      },
+                      "&:hover": {
+                        backgroundColor: "#00672a",
+                        borderColor: "#00672a",
+                        boxShadow: "none",
+                      },
+                      fontFamily: "Podkova, serif",
+                    }}
+                  >
+                    แลกโค้ด 20,000 ไมล์
+                  </Button>
+                  <Button
+                  onClick ={()=>{
+                    voucher("p_004");
+                 }}
+                    sx={{
+                      backgroundColor: "#00A944",
+                      borderColor: "#00A944",
+                      "&:active": {
+                        boxShadow: "none",
+                        backgroundColor: "#00A944",
+                        borderColor: "#00A944",
+                      },
+                      "&:hover": {
+                        backgroundColor: "#00672a",
+                        borderColor: "#00672a",
+                        boxShadow: "none",
+                      },
+                      fontFamily: "Podkova, serif",
+                    }}
+                  >
+                    แลกโค้ด 10,000 ไมล์
+                  </Button>
+                </ButtonGroup>
                 </Grid>
               </Grid>
             </Grid>
