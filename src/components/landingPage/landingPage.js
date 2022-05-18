@@ -8,9 +8,16 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import * as React from 'react';
+import * as React from "react";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
+import mileimg from "./mileimg.svg";
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
+  const navigate = useNavigate();
   const [destination, setDest] = React.useState("");
   // const dest = [Japan, NewYork, India];
 
@@ -38,12 +45,14 @@ function LandingPage() {
           }}
         >
           <Box sx={{ minWidth: 120 }}>
-            <FormControl style={{
+            <FormControl
+              style={{
                 width: "24%",
                 backgroundColor: "#E8E8E8",
                 marginLeft: "8%",
-                marginTop: "80px"
-            }}>
+                marginTop: "80px",
+              }}
+            >
               <InputLabel id="departure">Depart</InputLabel>
               <Select
                 labelId="departure-select-label"
@@ -58,12 +67,14 @@ function LandingPage() {
               </Select>
             </FormControl>
             <span className="to">To</span>
-            <FormControl style={{
+            <FormControl
+              style={{
                 width: "24%",
                 backgroundColor: "#E8E8E8",
                 marginLeft: "16%",
-                marginTop: "80px"
-            }}>
+                marginTop: "80px",
+              }}
+            >
               <InputLabel id="arrive">Arrive</InputLabel>
               <Select
                 labelId="arrive-select-label"
@@ -80,6 +91,66 @@ function LandingPage() {
           </Box>
         </Card>
       </div>
+      <Grid container display="row" rowSpacing={3}>
+        <div
+          style={{ position: "relative", margin: "0 auto", textAlign: "left" }}
+        >
+          <Grid container spacing={5}>
+          <Grid item xs={12}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="100%"
+                  image={mileimg}
+                  alt="mile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    บินแลกไมล์
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    สะสมไมล์เที่ยวบินเพื่อแลกตั๋ว บินฟรี ไม่ว่าจะเอเชีย ยุโรป
+                    หรือ อเมริกา ก็แลกได้
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary"  onClick={() =>{navigate("../mile");}}>
+                more details . .
+                </Button>
+              </CardActions>
+            </Card>
+            </Grid>
+            <Grid item xs={12}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="100%"
+                  image={mileimg}
+                  alt="mile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    บินแลกไมล์
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    สะสมไมล์เที่ยวบินเพื่อแลกตั๋ว บินฟรี ไม่ว่าจะเอเชีย ยุโรป
+                    หรือ อเมริกา ก็แลกได้
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary"  onClick={() =>{navigate("../mile");}}>
+                more details . .
+                </Button>
+              </CardActions>
+            </Card>
+            </Grid>
+          </Grid>
+        </div>
+      </Grid>
       <Footerr />
     </div>
   );
