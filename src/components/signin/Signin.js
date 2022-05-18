@@ -109,7 +109,7 @@ function Signin() {
                   className="enterpassword"
                 >
                   <InputLabel htmlFor="outlined-adornment-password">
-                    Password
+                  Enter your password
                   </InputLabel>
                   <OutlinedInput
                     id="outlined-adornment-password"
@@ -132,7 +132,7 @@ function Signin() {
                         </IconButton>
                       </InputAdornment>
                     }
-                    label="Password"
+                    label="Enter your password"
                   />
                 </FormControl>
               </Grid>
