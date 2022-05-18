@@ -55,8 +55,8 @@ function Payment() {
                 </Grid>
 
                 <Grid container item xs={4}
-                rowSpacing={0}
-                justifyContent='flex-end'>
+                    rowSpacing={0}
+                    justifyContent='flex-end'>
                     <Grid item xs={12}>
                         <div className='payment-price'>
                             <Card>
@@ -77,17 +77,26 @@ function Payment() {
                                 </table>
                             </Card>
                             <div className='payment-page-spacing' />
-                            <TextField className='voucher-code-textfield' fullWidth />
+                            <TextField className='voucher-code-textfield'
+                                label="Enter code"
+                                fullWidth
+                                sx={{
+                                    backgroundColor: "#D3D3D3",
+                                    color: "#717075"
+                                }} />
                             <div className='payment-page-spacing' />
-                            <Button fullWidth>something</Button>
+                            <Button
+                                sx={{
+                                    color: "white",
+                                    backgroundColor: "#00A944",
+                                    "&:hover": {
+                                        backgroundColor: "#f3a999",
+                                        boxShadow: "none",
+                                    }
+                                }}
+                                fullWidth>ยืนยันคำสั่งซื้อ</Button>
                         </div>
                     </Grid>
-                    {/* <Grid item xs={12}>
-                        
-                    </Grid>
-                    <Grid item xs={12}>
-                        
-                    </Grid> */}
                 </Grid>
             </Grid>
             <Footerr />

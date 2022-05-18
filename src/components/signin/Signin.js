@@ -154,7 +154,6 @@ function Signin() {
                   },
                   fontFamily: "Podkova, serif",
                 }}
-                onClick={login}
               >
                 Log in
               </Button>
