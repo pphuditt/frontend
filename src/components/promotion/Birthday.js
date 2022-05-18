@@ -6,6 +6,17 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { api } from "../../service/api";
+
+const voucher= () =>{
+  api.post("voucher",{
+    promotionId: "p_001"
+  })
+  .then((response)=>{
+    if(response.status===200) alert("แลกแล้ว");
+    else alert("แลกไม่ได้จ้า");
+  });
+};
 
 function Birthday() {
   return (
@@ -52,7 +63,7 @@ function Birthday() {
                     variant="h6"
                     color="text.secondary"
                   >
-                    ระยะเวลาในการจอง : <br />
+                    ระยะเวลาในการจอง : 2100-01-01<br />
                     รายละเอียดส่วนลด : จองตั๋วเดือนเกิดรับส่วนลด 500 THB <br />
                   </Typography>
                   <Typography
@@ -80,6 +91,7 @@ function Birthday() {
               </Card>
               <Grid item xs={12}>
                 <Button
+                  onClick={voucher}
                   variant="contained"
                   sx={{
                     marginLeft: "55%",
