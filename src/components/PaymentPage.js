@@ -1,5 +1,13 @@
 import '../css/Payment.css';
 
+import * as React from 'react';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+
+import { api } from '../service/api';
+import authHeader from '../service/AuthProvider.js';
+
 import paymentBackground from '../statics/images/payment-background.svg';
 import planeIcone from '../statics/images/plane-icon.svg';
 import calendar from '../statics/images/calendar-paymentpage.svg';
@@ -7,9 +15,24 @@ import linepic from '../statics/images/linepic-payment.svg';
 
 import Navbar from './Navbar';
 import Footerr from './Footerr';
-import { Card, Grid, TextField, Button } from '@mui/material';
+import { Card, Grid, Button } from '@mui/material';
 
 function Payment() {
+
+    const [discountAmount, setDiscountAmount] = React.useState(0);
+    const [voucherCode, setVoucherCode] = React.useState("");
+
+    const discount = () => {
+        api.get(`voucher/use/${voucherCode}`, {
+            headers: authHeader()
+        })
+            .then((response) => {
+                setDiscountAmount(response.data);
+            }).catch((error) => {
+                alert("error", error.response.status);
+            });
+    };
+
     return (
         <div className="payment-main-body">
             <Navbar />
@@ -68,7 +91,7 @@ function Payment() {
                                     </tr>
                                     <tr className='payment-price-detail-row discount'>
                                         <td><p className='price-detail'>ส่วนลด</p></td>
-                                        <td><p className='price-detail rightCol'>- THB 1,000</p></td>
+                                        <td><p className='price-detail rightCol'>{discountAmount}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row'>
                                         <td><p className='price-detail'>ราคารวมทั้งหมด</p></td>
@@ -77,20 +100,43 @@ function Payment() {
                                 </table>
                             </Card>
                             <div className='payment-page-spacing' />
-                            <TextField className='voucher-code-textfield'
-                                label="Enter code"
-                                fullWidth
-                                sx={{
-                                    backgroundColor: "#D3D3D3",
-                                    color: "#717075"
-                                }} />
+                            <Grid container spacing={2}>
+                                <Grid item xs={8}>
+                                    <FormControl sx={{ width: '100%' }} variant="outlined">
+                                        <InputLabel htmlFor="voucher-code-textfield">Enter Code</InputLabel>
+                                        <OutlinedInput
+                                            id="voucher-code-textfield"
+                                            onChange={(newValue) => {
+                                                console.log(newValue.target.value);
+                                                setVoucherCode(newValue.target.value);
+                                              }}
+                                            label="VoucherCode"
+                                        />
+                                    </FormControl>
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <Button sx={{
+                                        color: "white",
+                                        height: "100%",
+                                        backgroundColor: "#DF3131",
+                                        "&:hover": {
+                                            backgroundColor: "#ad0202",
+                                            boxShadow: "none",
+                                        }
+                                    }}
+                                    onClick={discount}>
+                                        check code
+                                    </Button>
+                                </Grid>
+                            </Grid>
+
                             <div className='payment-page-spacing' />
                             <Button
                                 sx={{
                                     color: "white",
                                     backgroundColor: "#00A944",
                                     "&:hover": {
-                                        backgroundColor: "#f3a999",
+                                        backgroundColor: "#008535",
                                         boxShadow: "none",
                                     }
                                 }}
@@ -98,6 +144,7 @@ function Payment() {
                         </div>
                     </Grid>
                 </Grid>
+                <div className='payment-page-spacing' />
             </Grid>
             <Footerr />
         </div >
