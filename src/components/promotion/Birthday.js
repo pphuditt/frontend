@@ -6,29 +6,37 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { api } from "../../service/api";
+
+const voucher= () =>{
+  api.post("voucher",{
+    promotionId: "p_001"
+  })
+  .then((response)=>{
+    if(response.status===200) alert("แลกแล้ว");
+    else alert("แลกไม่ได้จ้า");
+  });
+};
 
 function Birthday() {
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <Navbar />
       <BSvg style={{ width: "100%", height: "100%" }} />
       <Grid container display="row" rowSpacing={4}>
-        <div>
+        <div style={{ position: "relative", margin: "0 auto", textAlign: "left" }}>
           <Box
-            marginLeft={20}
-            marginRight={20}
-            marginTop={23}
-            sx={{ maxWidth: 1000, maxHeight: 1000 }}
+            marginTop={10}
+            sx={{ minWidth: 1000, maxHeight: 1000,}}
           >
+            <Grid container display="row" rowSpacing={4}>
             <Grid item xs={12}>
               <text
                 style={{
                   position: "absolute",
-                  float: "none",
                   textAligVertical: "center",
                   textAlign: "center",
-                  width: "84%",
-                  top: "77%",
+                  width: "100%",
                   fontSize: "50px",
                   fontFamily: "Podkova, serif",
                 }}
@@ -37,7 +45,7 @@ function Birthday() {
               </text>
             </Grid>
             <Grid item xs={12}>
-              <Card style={{ marginLeft: "30%", width: "1000px" }}>
+              <Card style={{ marginTop:"5%"}}>
                 <CardContent>
                   <Typography
                     marginLeft={2}
@@ -55,7 +63,7 @@ function Birthday() {
                     variant="h6"
                     color="text.secondary"
                   >
-                    ระยะเวลาในการจอง : <br />
+                    ระยะเวลาในการจอง : 2100-01-01<br />
                     รายละเอียดส่วนลด : จองตั๋วเดือนเกิดรับส่วนลด 500 THB <br />
                   </Typography>
                   <Typography
@@ -83,11 +91,12 @@ function Birthday() {
               </Card>
               <Grid item xs={12}>
                 <Button
+                  onClick={voucher}
                   variant="contained"
                   sx={{
                     marginLeft: "55%",
                     marginTop: "3%",
-                    width: "50%",
+                    float:"right",
                     backgroundColor: "#00A944",
                     borderColor: "#00A944",
                     "&:active": {
@@ -106,6 +115,7 @@ function Birthday() {
                   กดเพื่อรับโค้ด
                 </Button>
               </Grid>
+            </Grid>
             </Grid>
           </Box>
         </div>

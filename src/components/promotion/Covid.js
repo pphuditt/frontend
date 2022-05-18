@@ -7,30 +7,37 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { api } from "../../service/api";
+
+const voucher= (id) =>{
+  api.post("voucher",{
+    promotionId: id
+  })
+  .then((response)=>{
+    if(response.status===200) alert("แลกแล้ว");
+    else alert("แลกไม่ได้จ้า");
+  });
+};
 
 function Covid() {
   return (
-    <div>
+    <div  style={{ textAlign: "center" }}>
       <Navbar />
       <CSvg style={{ width: "100%", height: "100%" }} />
-      <Grid container display="row" rowSpacing={4}>
-        <div>
+      <Grid container display="row" rowSpacing={5}>
+        <div style={{ position: "relative", margin: "0 auto", textAlign: "left" }}>
           <Box
-            marginLeft={20}
-            marginRight={20}
-            marginTop={23}
-            sx={{ maxWidth: 1000, maxHeight: 1000}
-          }
+            marginTop={10}
+            sx={{ maxWidth: 1000, maxHeight: 1000}}
           >
+          <Grid container display="row" rowSpacing={4}>
             <Grid item xs={12}>
               <text
                 style={{
                   position: "absolute",
-                  float: "none",
                   textAligVertical: "center",
                   textAlign: "center",
-                  width: "80%",
-                  top: "77%",
+                  width: "100%",
                   fontSize: "50px",
                   fontFamily: "Podkova, serif",
                 }}
@@ -39,7 +46,7 @@ function Covid() {
               </text>
             </Grid>
             <Grid item xs={12}>
-              <Card style={{ marginLeft: "30%", width: "1000px" }}>
+              <Card style={{  marginTop:"5%", width: "1000px" }}>
                 <CardContent>
                   <Typography
                     marginLeft={2}
@@ -57,7 +64,7 @@ function Covid() {
                     variant="h6"
                     color="text.secondary"
                   >
-                    ระยะเวลาในการจอง : <br />
+                    ระยะเวลาในการจอง : 2100-01-01<br />
                     รายละเอียดส่วนลด : ทวีปยุโรป ส่วนลด 5,000THB <br />
                   </Typography>
                   <Typography
@@ -97,12 +104,15 @@ function Covid() {
                   variant="contained"
                   aria-label="outlined primary button group"
                   style={{
-                    marginLeft: "79%",
                     marginTop: "3%",
+                    float: "right",
                     width: "51.35%",
                   }}
                 >
                   <Button
+                    onClick ={()=>{
+                       voucher("p_005");
+                    }}
                     sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
@@ -122,6 +132,9 @@ function Covid() {
                     รับโค้ดส่วนลดไปยุโรป
                   </Button>
                   <Button
+                  onClick ={()=>{
+                    voucher("p_006");
+                 }}
                     sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
@@ -141,6 +154,9 @@ function Covid() {
                     รับโค้ดส่วนลดไปอเมริกา
                   </Button>
                   <Button
+                  onClick ={()=>{
+                    voucher("p_007");
+                 }}
                     sx={{
                       backgroundColor: "#00A944",
                       borderColor: "#00A944",
@@ -161,6 +177,7 @@ function Covid() {
                   </Button>
                 </ButtonGroup>
               </Grid>
+            </Grid>
             </Grid>
           </Box>
         </div>

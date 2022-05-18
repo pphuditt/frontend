@@ -7,6 +7,7 @@ import Covid from './components/promotion/Covid';
 import Birthday from './components/promotion/Birthday';
 import Mile from './components/promotion/Mile';
 
+
 import ProfilePage from './components/ProfilePage';
 import NotFoundPage from './components/NotFoundPage';
 import Payment from './components/PaymentPage';
