@@ -4,8 +4,11 @@ import planeIcon from "./planeIcon.svg";
 import { Route, Router } from "react-router-dom";
 import Payment from "./PaymentPage";
 import { Switch } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function FlightDetails() {
+  const navigate = useNavigate();
+
   const flightData1 = {
     instanceId: 134,
     flightId: 3,
@@ -34,7 +37,7 @@ function FlightDetails() {
 
   const array = [flightData1, flightData2];
   const nextEventHandler = () => {
-    
+    navigate("../payment");
   };
 
   return (
