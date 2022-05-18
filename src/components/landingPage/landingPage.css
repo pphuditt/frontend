@@ -1,0 +1,14 @@
+.landing-bg {
+    width: 100%;
+    position: relative;
+    
+}
+
+.to {
+    font-size: 24px;
+    font-family: Georgia;
+    margin-left: 16%;
+    position: relative;
+    width: 20%;
+    top: 80px;
+}
