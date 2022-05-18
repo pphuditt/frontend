@@ -1,6 +1,9 @@
 import "./FlightDetails.css";
 import Card from "./Card";
 import planeIcon from "./planeIcon.svg";
+import { Route, Router } from "react-router-dom";
+import Payment from "./PaymentPage";
+import { Switch } from "@mui/material";
 
 function FlightDetails() {
   const flightData1 = {
@@ -30,6 +33,9 @@ function FlightDetails() {
   };
 
   const array = [flightData1, flightData2];
+  const nextEventHandler = () => {
+    
+  };
 
   return (
     <div>
@@ -59,7 +65,9 @@ function FlightDetails() {
             <div className="price">
               <p>THB {flightData.fare}</p>
             </div>
-            <button className="next-button">Next</button>
+            <button className="next-button" onClick={nextEventHandler}>
+              Next
+            </button>
           </Card>
         );
       })}
