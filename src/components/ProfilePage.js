@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import Footerr from "./Footerr";
 import profilepic from "../statics/images/profilepic.svg"
 
+
+
 function ProfilePage() {
     const ob1 = {
         promotion: 'Promotion1',
