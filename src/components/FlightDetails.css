@@ -1,7 +1,7 @@
 .plane-icon {
     display: inline;
     position: relative;
-    left: 8%;
+    left: 4%;
     margin-top: 4%;
   }
   
@@ -10,7 +10,7 @@
     width: 20%;
     color: #717075;
     position: relative;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    /* font-family: Georgia, "Times New Roman", Times, serif; */
     text-align: left;
     left: 16%;
     bottom: 88px;
@@ -46,10 +46,10 @@
     width: 4%;
     height: 0;
     font-size: 30px;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    /* font-family: Georgia, "Times New Roman", Times, serif; */
     color: #717075;
     position: relative;
-    left: 42%;
+    left: 40%;
     bottom: 118px;
     text-shadow: 2px 2px 2px rgb(201, 201, 201);
   }
@@ -57,7 +57,7 @@
   .arrival-text-element {
     width: 20%;
     height: 0;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    /* font-family: Georgia, "Times New Roman", Times, serif; */
     color: #717075;
     text-shadow: 2px 2px 2px rgb(201, 201, 201);
     text-align: left;
@@ -70,23 +70,23 @@
   .price {
       width: 20%;
       height: 0;
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      /* font-family: Georgia, 'Times New Roman', Times, serif; */
       font-size: 24px;
       color: #9B6E5A;
       margin-top: 4%;
       position: relative;
       left: 16%;
-      bottom: 48px;
+      bottom: 16px;
   }
   
   .next-button {
     position: relative;
     left: 80%;
-    bottom: 56px;
+    bottom: 24px;
     -webkit-border-radius: 15;
     -moz-border-radius: 15;
     border-radius: 15px;
-    font-family: Georgia;
+    /* font-family: Georgia; */
     color: #9B6E5A;
     font-size: 20px;
     border-color: #717075;
