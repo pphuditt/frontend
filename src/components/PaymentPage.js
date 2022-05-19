@@ -17,7 +17,11 @@ import Navbar from './Navbar';
 import Footerr from './Footerr';
 import { Card, Grid, Button } from '@mui/material';
 
-function Payment() {
+function Payment(props) {
+
+    const {takenTime, fromAirport, fromCountry, fromAirportCode,fromDate, fromTime, toAirport, toCountry, toAirportCode, toDate, toTime, amount} = props;
+
+    const timeAbroad = takenTime / 60 + " hrs";
 
     const [discountAmount, setDiscountAmount] = React.useState(0);
     const [voucherCode, setVoucherCode] = React.useState("");
@@ -52,25 +56,23 @@ function Payment() {
                             <img className='plane-icon' src={planeIcone} alt='plane-icon' />
                             <div className='payment-flight-detail'>
                                 <div className='src-airport'>
-                                    <h2>11:30 <span className='payment-country'>INDIA</span></h2>
+                                    <h2>{fromTime} <span className='payment-country'>{fromCountry}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
-                                    <h2 className='payment-flight-date'>MON 28 MAR 2022</h2>
+                                    <h2 className='payment-flight-date'>{fromDate}</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>BKK</h2>
-                                        <p className='payment-airport-detail'><b>Suvarnabhumi</b></p>
-                                        <p className='payment-airport-detail'><b>International Airport</b></p>
+                                        <h2 className='payment-airport-detail'>{fromAirportCode}</h2>
+                                        <p className='payment-airport-detail'><b>{fromAirport}</b></p>
                                     </div>
                                 </div>
-                                <p className='payment-time-abroad'>3 hrs</p>
+                                <p className='payment-time-abroad'>{timeAbroad}</p>
                                 <img className='linepic' src={linepic} alt='linepic' />
                                 <div className='dest-airport'>
-                                    <h2>11:30 <span className='payment-country'>INDIA</span></h2>
+                                    <h2>{toTime} <span className='payment-country'>{toCountry}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
-                                    <h2 className='payment-flight-date'>MON 28 MAR 2022</h2>
+                                    <h2 className='payment-flight-date'>{toDate}</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>BKK</h2>
-                                        <p className='payment-airport-detail'><b>Suvarnabhumi</b></p>
-                                        <p className='payment-airport-detail'><b>International Airport</b></p>
+                                        <h2 className='payment-airport-detail'>{toAirportCode}</h2>
+                                        <p className='payment-airport-detail'><b>{toAirport}</b></p>
                                     </div>
                                 </div>
                             </div>
@@ -87,8 +89,8 @@ function Payment() {
                                 <h3 className='payment-price-header'>รายละเอียดราคา</h3>
                                 <table className='price-detail-table'>
                                     <tr className='payment-price-detail-row'>
-                                        <td><p className='price-detail'>ขาไป (BKK DEL)</p></td>
-                                        <td><p className='price-detail rightCol'>THB 4,000</p></td>
+                                        <td><p className='price-detail'>ขาไป ({fromAirportCode} {toAirportCode})</p></td>
+                                        <td><p className='price-detail rightCol'>THB {amount}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row discount'>
                                         <td><p className='price-detail'>ส่วนลด</p></td>
@@ -96,7 +98,7 @@ function Payment() {
                                     </tr>
                                     <tr className='payment-price-detail-row'>
                                         <td><p className='price-detail'>ราคารวมทั้งหมด</p></td>
-                                        <td><p className='price-detail rightCol'>THB 3,000</p></td>
+                                        <td><p className='price-detail rightCol'>THB {amount-discountAmount}</p></td>
                                     </tr>
                                 </table>
                             </Card>
@@ -110,7 +112,7 @@ function Payment() {
                                             onChange={(newValue) => {
                                                 console.log(newValue.target.value);
                                                 setVoucherCode(newValue.target.value);
-                                              }}
+                                            }}
                                             label="VoucherCode"
                                         />
                                     </FormControl>
@@ -119,14 +121,19 @@ function Payment() {
                                     <Button sx={{
                                         color: "white",
                                         height: "100%",
+
                                         float: "right",
+
+                                        fontWeight: "bold",
+
                                         backgroundColor: "#DF3131",
                                         "&:hover": {
                                             backgroundColor: "#ad0202",
                                             boxShadow: "none",
                                         }
                                     }}
-                                    onClick={discount}>
+                                        fullWidth
+                                        onClick={discount}>
                                         check code
                                     </Button>
                                 </Grid>
@@ -134,6 +141,7 @@ function Payment() {
 
                             <div className='payment-page-spacing' />
                             <Button
+                                fullWidth
                                 sx={{
                                     color: "white",
                                     backgroundColor: "#00A944",
@@ -142,11 +150,10 @@ function Payment() {
                                         boxShadow: "none",
                                     }
                                 }}
-                                fullWidth>ยืนยันคำสั่งซื้อ</Button>
+                            >ยืนยันคำสั่งซื้อ</Button>
                         </div>
                     </Grid>
                 </Grid>
-                <div className='payment-page-spacing' />
             </Grid>
             <Footerr />
         </div >
