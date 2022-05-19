@@ -9,6 +9,9 @@ const NewLink = styled(Link)`
 `
 
 const Sidebar = () => {
+    const temp = JSON.parse(localStorage.getItem("user"));
+    console.log(temp.role.includes("ROLE_ADMIN"));
+    
     return (
         <div className='sidebar'>
             <div className='top'>
@@ -24,7 +27,7 @@ const Sidebar = () => {
                     <NewLink to='../dashboard/flight'><li>Flight</li></NewLink>
                     <NewLink to='../dashboard/fi'><li>Flight instance</li></NewLink>
                     <NewLink to='../dashboard/promotion'><li>Promotion</li></NewLink>
-                    <NewLink to='../dashboard/user'><li>User</li></NewLink>
+                    {temp.role.includes("ROLE_ADMIN")? <NewLink to='../dashboard/user'><li>User</li></NewLink>:<></>}
                     <NewLink to='../dashboard/ticket'><li>Ticket</li></NewLink>
                     <NewLink to='../dashboard/model'><li>Model</li></NewLink>
                 </ul>

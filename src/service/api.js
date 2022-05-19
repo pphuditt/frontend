@@ -3,7 +3,7 @@ import authHeader from './AuthProvider';
 
 
 const auth = axios.create({
-    baseURL : `https://afternoon-brook-99525.herokuapp.com/auth`
+    baseURL : `http://localhost:8080/auth`
 })
 
 const api = axios.create({
