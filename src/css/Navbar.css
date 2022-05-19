@@ -25,9 +25,8 @@
 }
 
 .user-icon {
-    position: absolute;
-    top: 8px;
-    right: 88px;
+    margin-top: 20%;
+    float: right;
 }
 
 .user-name{
