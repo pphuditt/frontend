@@ -2,64 +2,69 @@ import '../css/ProfilePage.css';
 
 import Navbar from "./Navbar";
 import Footerr from "./Footerr";
-import profilepic from "../statics/images/profilepic.svg"
+import profilepic from "../statics/images/profilepic.svg";
+import authHeader from '../service/AuthProvider.js';
+
+import { Button } from '@mui/material';
+import {api} from '../service/api';
+import {useState,useEffect} from 'react';
+import axios from 'axios';
+import moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function ProfilePage() {
-    const ob1 = {
-        promotion: 'Promotion1',
-        code: 'Code1',
-        expDate: 'ExpDate1'
-    }
 
-    const ob2 = {
-        promotion: 'Promotion2',
-        code: 'Code2',
-        expDate: 'ExpDate2'
-    }
+    const [profile,setProfile] = useState({});
+    const [table,setTable] = useState([]);
+    const navigate = useNavigate();
 
-    const ob3 = {
-        promotion: 'Promotion3',
-        code: 'Code3',
-        expDate: 'ExpDate3'
-    }
+    const signOut = () => {
+        console.log("out")
+        localStorage.removeItem("user");
+        navigate("../signin");
+        
+    };
 
-    const array = [ob1, ob2, ob3];
-
-    const user_data = {
-        "id": 1,
-        "username": "disorn.bootso2@gmail.com",
-        "firstName": "Nior",
-        "lastName": "Disorn",
-        "regisDate": "2022-04-09",
-        "totalMile": 0,
-        "role": "ROLE_PASSENGER",
-        "dob": "2001-08-07"
-    }
-
-    const fullName = user_data.firstName + " " + user_data.lastName;
+    useEffect(() => {
+        api.get('user/profile',{
+            headers : authHeader()
+        }).then((res) => {
+            setProfile(res.data)
+        });
+        axios.get('http://localhost:8080/api/voucher/user/individual',{
+            headers : authHeader()
+        }).then((res) => {
+            setTable(res.data);
+        });
+        // api.get('voucher/user/individual',{
+            // headers : authHeader()
+        // }).then((res) => {
+            // setTable(res.data);
+        // });
+    },[]);
 
     return (
         <div className='main-body-profilePage'>
             <Navbar />
             <div className='profile-background' />
             <img className='profilepic' src={profilepic} alt='profilepic' />
-            <h1 className='name'>{fullName}</h1>
+            <h1 className='name'>{profile.fullName}</h1>
             <div className='user-detail'>
                 <table className='table'>
                     <tbody>
                         <tr>
                             <td className='profile-left-col'><h3>Email</h3></td>
-                            <td><p>{user_data.username}</p></td>
+                            <td><p>{profile.username}</p></td>
                         </tr>
                         <tr>
                             <td className='profile-left-col'><h3>Birth date</h3></td>
-                            <td><p>{user_data.dob}</p></td>
+                            <td><p>{profile.DOB}</p></td>
                         </tr>
                         <tr>
                             <td className='profile-left-col'><h3>Total mile</h3></td>
-                            <td><p>{user_data.totalMile}</p></td>
+                            <td><p>{profile.totalMile}</p></td>
                         </tr>
                     </tbody>
                 </table>
@@ -74,17 +79,18 @@ function ProfilePage() {
                         </tr>
                     </thead>
                     <tbody>
-                        {array.map((row) => {
+                        {table.map((row) => {
                             return (
                                 <tr className='voucher-row'>
-                                    <td>{row.promotion}</td>
+                                    <td>{row.title}</td>
                                     <td>{row.code}</td>
-                                    <td>{row.expDate}</td>
+                                    <td>{moment(row.valid_until).format('dddd, MMMM Do YYYY, h:mm:ss a')}</td>
                                 </tr>
                             );
                         })}
                     </tbody>
                 </table>
+                <Button variant="contained" onClick={signOut} color="error">Logout</Button>
             </div>
             <Footerr />
         </div>
