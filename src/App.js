@@ -26,6 +26,10 @@ import FIForm from './Component/Popup/FIForm';
 import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
 import Flight from './components/Flight'
+<<<<<<< HEAD
+import Income from './Component/Income'
+=======
+>>>>>>> f2814d15af7b7916b25ea51621d2888e68ce9cff
 
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')
@@ -44,6 +48,7 @@ function App() {
         <Route path="privacy" element={<Privacy/>}/>
         <Route path="covid" element={<Covid/>}/>
         <Route path="birthday" element={<Birthday/>}/>
+        <Route path="income" element={<Income/>}/>
         <Route path="mile" element={<Mile/>}/>
         <Route path="dashboard/:page" element={<ManagementPage/>}/>
         <Route path='form/airport' element={<AirportForm/>}/>
