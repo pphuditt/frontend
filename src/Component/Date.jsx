@@ -29,33 +29,7 @@ const getTest = () => {
 const DateTest = () => {
 
 
-    return (
-        <div>
-            {/* <Button variant="contained" onClick={signIn} color="success">Login</Button> */}
-            {/* <Button variant="contained" onClick={signOut} color="error">Logout</Button> */}
-            {/* <Button variant="contained" onClick={getTest} >getTest</Button> */}
-            <Box sx={{maxWidth:350,backgroundColor:'#fefefe',paddingLeft:4,paddingTop:4,paddingBottom:4}}>
-                <Grid container>
-                    <Grid item xs={8}>
-                        <Typography variant="h6">
-                            Title
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <StarIcon></StarIcon>
-                    </Grid>
-                    <Grid container item xs={12}>
-                        <Grid item xs={3}>
-                            <Typography variant="h5">Value</Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography variant="h6">หน่วย</Typography>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Box>
-        </div>
-    );
+    return ;
 };
 
 export default DateTest;
