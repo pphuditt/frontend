@@ -62,7 +62,7 @@ function Mile() {
                       style={{ fontFamily: "Podkova, serif" }}
                     >
                       <u>
-                        <b>รายละเอียดโปรโมชั่น </b>
+                        <b>รายละเอียดโปรโมชัน </b>
                       </u>
                     </Typography>
                     <Typography

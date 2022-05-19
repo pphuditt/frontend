@@ -32,6 +32,7 @@ function LandingPage(props) {
   const [airport1, setAirport1] = React.useState([]);
   const [airport2, setAirport2] = React.useState([]);
   const [date, setDate] = React.useState(moment());
+  const minDate = moment();
   const navigate = useNavigate();
 
   const clickEventHandler = () => {
@@ -134,6 +135,7 @@ function LandingPage(props) {
                   <DatePicker
                     label="Departure Date"
                     value={date}
+                    minDate={minDate}
                     onChange={(newValue) => {
                       setDate(newValue);
                     }}
