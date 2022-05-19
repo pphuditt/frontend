@@ -32,6 +32,7 @@ function Payment(props) {
         })
             .then((response) => {
                 setDiscountAmount(response.data);
+                alert("โค้ดใช้ได้คร่า เริ่มเรอ");
             }).catch((error) => {
                 alert("error", error.response.status);
             });
@@ -102,8 +103,8 @@ function Payment(props) {
                                 </table>
                             </Card>
                             <div className='payment-page-spacing' />
-                            <Grid container spacing={2}>
-                                <Grid item xs={8}>
+                            <Grid container spacing={0}>
+                                <Grid item xs={9}>
                                     <FormControl sx={{ width: '100%' }} variant="outlined">
                                         <InputLabel htmlFor="voucher-code-textfield">Enter Code</InputLabel>
                                         <OutlinedInput
@@ -116,11 +117,15 @@ function Payment(props) {
                                         />
                                     </FormControl>
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={3}>
                                     <Button sx={{
                                         color: "white",
                                         height: "100%",
+
+                                        float: "right",
+
                                         fontWeight: "bold",
+
                                         backgroundColor: "#DF3131",
                                         "&:hover": {
                                             backgroundColor: "#ad0202",
