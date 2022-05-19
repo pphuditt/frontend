@@ -5,7 +5,7 @@ import { Route, Router } from "react-router-dom";
 import Payment from "./PaymentPage";
 import { Switch } from "@mui/material";
 
-function FlightDetails() {
+function FlightDetails(props) {
   const flightData1 = {
     instanceId: 134,
     flightId: 3,
