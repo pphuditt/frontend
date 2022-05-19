@@ -8,14 +8,18 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { api } from "../../service/api";
 import ButtonGroup from "@mui/material/ButtonGroup";
+import authHeader from '../../service/AuthProvider.js';
 
 const voucher= (id) =>{
   api.post("voucher",{
     promotionId: id
+  },{
+    headers : authHeader()
   })
   .then((response)=>{
     if(response.status===200) alert("แลกแล้ว");
-    else alert("แลกไม่ได้จ้า");
+  }).catch((error)=>{
+    alert("แลกไม่ได้จ้า");
   });
 };
 
@@ -65,8 +69,7 @@ function Mile() {
                       marginLeft={5}
                       variant="h6"
                       color="text.secondary"
-                    >
-                      ระยะเวลาในการจอง : 2100-01-01<br />
+                    > 
                       รายละเอียดส่วนลด : 50,000 ไมล์ รับส่วนลด 5,000 THB <br />
                     </Typography>
                     <Typography
