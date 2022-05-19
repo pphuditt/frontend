@@ -19,8 +19,21 @@ import { Card, Grid, Button } from '@mui/material';
 
 function Payment(props) {
 
-    const {takenTime, fromAirport, fromCountry, fromAirportCode,fromDate, fromTime, toAirport, toCountry, toAirportCode, toDate, toTime, amount} = props;
+    ///const {takenTime, fromAirport, fromCountry, fromAirportCode,fromDate, fromTime, toAirport, toCountry, toAirportCode, toDate, toTime, amount} = props;
+    const takenTime = 300;
+    const fromAirport = "Suvarnabhumi Airport";
+    const fromCountry = "Bangkok";
+    const fromAirportCode = "BKK";
+    const fromDate = "MON 28 MAR 2022";
+    const fromTime = "11:30";
 
+    const toAirport = "Narita International Airport";
+    const toCountry = "Japan";
+    const toAirportCode = "NRT";
+    const toDate = "MON 28 MAR 2022";
+    const toTime = "17:30"
+    const amount = 15000;
+    
     const timeAbroad = takenTime / 60 + " hrs";
 
     const [discountAmount, setDiscountAmount] = React.useState(0);
@@ -56,23 +69,23 @@ function Payment(props) {
                             <img className='plane-icon' src={planeIcone} alt='plane-icon' />
                             <div className='payment-flight-detail'>
                                 <div className='src-airport'>
-                                    <h2>{fromTime} <span className='payment-country'>{fromCountry}</span></h2>
+                                    <h2 style={{fontFamily: "Podkova, serif"}}>{fromTime} <span className='payment-country'>{fromCountry}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
-                                    <h2 className='payment-flight-date'>{fromDate}</h2>
+                                    <h2 style={{fontFamily: "Podkova, serif"}} className='payment-flight-date'>{fromDate}</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>{fromAirportCode}</h2>
-                                        <p className='payment-airport-detail'><b>{fromAirport}</b></p>
+                                        <h2 style={{fontFamily: "Podkova, serif"}} className='payment-airport-detail'>{fromAirportCode}</h2>
+                                        <p style={{fontFamily: "Podkova, serif"}} className='payment-airport-detail'><b>{fromAirport}</b></p>
                                     </div>
                                 </div>
-                                <p className='payment-time-abroad'>{timeAbroad}</p>
+                                <p style={{fontFamily: "Podkova, serif"}} className='payment-time-abroad'>{timeAbroad}</p>
                                 <img className='linepic' src={linepic} alt='linepic' />
                                 <div className='dest-airport'>
-                                    <h2>{toTime} <span className='payment-country'>{toCountry}</span></h2>
+                                    <h2 style={{fontFamily: "Podkova, serif"}} >{toTime} <span className='payment-country'>{toCountry}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
-                                    <h2 className='payment-flight-date'>{toDate}</h2>
+                                    <h2 style={{fontFamily: "Podkova, serif"}} className='payment-flight-date'>{toDate}</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>{toAirportCode}</h2>
-                                        <p className='payment-airport-detail'><b>{toAirport}</b></p>
+                                        <h2 style={{fontFamily: "Podkova, serif"}} className='payment-airport-detail'>{toAirportCode}</h2>
+                                        <p style={{fontFamily: "Podkova, serif"}} className='payment-airport-detail'><b>{toAirport}</b></p>
                                     </div>
                                 </div>
                             </div>
@@ -86,19 +99,19 @@ function Payment(props) {
                     <Grid item xs={12}>
                         <div className='payment-price'>
                             <Card>
-                                <h3 className='payment-price-header'>รายละเอียดราคา</h3>
+                                <h3 style={{fontFamily: "Podkova, serif"}} className='payment-price-header'>รายละเอียดราคา</h3>
                                 <table className='price-detail-table'>
                                     <tr className='payment-price-detail-row'>
-                                        <td><p className='price-detail'>ขาไป ({fromAirportCode} {toAirportCode})</p></td>
-                                        <td><p className='price-detail rightCol'>THB {amount}</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}><p className='price-detail'>ขาไป ({fromAirportCode} {toAirportCode})</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}> <p className='price-detail rightCol'>THB {amount}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row discount'>
-                                        <td><p className='price-detail'>ส่วนลด</p></td>
-                                        <td><p className='price-detail rightCol'>{discountAmount}</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}><p className='price-detail'>ส่วนลด</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}><p className='price-detail rightCol'>{discountAmount}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row'>
-                                        <td><p className='price-detail'>ราคารวมทั้งหมด</p></td>
-                                        <td><p className='price-detail rightCol'>THB {amount-discountAmount}</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}><p className='price-detail'>ราคารวมทั้งหมด</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}><p className='price-detail rightCol'>THB {amount-discountAmount}</p></td>
                                     </tr>
                                 </table>
                             </Card>
@@ -106,7 +119,7 @@ function Payment(props) {
                             <Grid container spacing={0}>
                                 <Grid item xs={9}>
                                     <FormControl sx={{ width: '100%' }} variant="outlined">
-                                        <InputLabel htmlFor="voucher-code-textfield">Enter Code</InputLabel>
+                                        <InputLabel htmlFor="voucher-code-textfield" style={{fontFamily: "Podkova, serif"}}>Enter Code</InputLabel>
                                         <OutlinedInput
                                             id="voucher-code-textfield"
                                             onChange={(newValue) => {
@@ -123,7 +136,7 @@ function Payment(props) {
                                         height: "100%",
 
                                         float: "right",
-
+                                        fontFamily: "Podkova, serif",
                                         fontWeight: "bold",
 
                                         backgroundColor: "#DF3131",
@@ -144,6 +157,7 @@ function Payment(props) {
                                 fullWidth
                                 sx={{
                                     color: "white",
+                                    fontFamily: "Podkova, serif",
                                     backgroundColor: "#00A944",
                                     "&:hover": {
                                         backgroundColor: "#008535",
