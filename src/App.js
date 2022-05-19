@@ -27,7 +27,6 @@ import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
 import Flight from './components/Flight';
 
-
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')
 //                       .getInstantFor('2000-01-01T00:00'));

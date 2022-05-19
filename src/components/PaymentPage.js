@@ -84,17 +84,17 @@ function Payment(props) {
                                 <div className='src-airport'>
                                     <h2>{fromTime} <span className='payment-country'>{fromTimeZone}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
-                                    <h2 className='payment-flight-date'>{fromDate}</h2>
+                                    <h2 style={{fontFamily: "Podkova, serif"}} className='payment-flight-date'>{fromDate}</h2>
                                     <div className='payment-airport-start'>
                                         <h2 className='payment-airport-detail'>{fromAirport}</h2>
                                     </div>
                                 </div>
-                                <p className='payment-time-abroad'>{timeAbroad}</p>
+                                <p style={{fontFamily: "Podkova, serif"}} className='payment-time-abroad'>{timeAbroad}</p>
                                 <img className='linepic' src={linepic} alt='linepic' />
                                 <div className='dest-airport'>
                                     <h2>{toTime} <span className='payment-country'>{toTimezone}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
-                                    <h2 className='payment-flight-date'>{toDate}</h2>
+                                    <h2 style={{fontFamily: "Podkova, serif"}} className='payment-flight-date'>{toDate}</h2>
                                     <div className='payment-airport-start'>
                                         <h2 className='payment-airport-detail'>{toAirport}</h2>
                                     </div>
@@ -110,15 +110,15 @@ function Payment(props) {
                     <Grid item xs={12}>
                         <div className='payment-price'>
                             <Card>
-                                <h3 className='payment-price-header'>รายละเอียดราคา</h3>
+                                <h3 style={{fontFamily: "Podkova, serif"}} className='payment-price-header'>รายละเอียดราคา</h3>
                                 <table className='price-detail-table'>
                                     <tr className='payment-price-detail-row'>
                                         <td><p className='price-detail'>ราคาตั๋วจาก ({fromAirport+" "+toAirport})</p></td>
                                         <td><p className='price-detail rightCol'>THB {fare}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row discount'>
-                                        <td><p className='price-detail'>ส่วนลด</p></td>
-                                        <td><p className='price-detail rightCol'>{discountAmount}</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}><p className='price-detail'>ส่วนลด</p></td>
+                                        <td style={{fontFamily: "Podkova, serif"}}><p className='price-detail rightCol'>{discountAmount}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row'>
                                         <td><p className='price-detail'>ราคาสุทธิ</p></td>
@@ -130,7 +130,7 @@ function Payment(props) {
                             <Grid container spacing={0}>
                                 <Grid item xs={9}>
                                     <FormControl sx={{ width: '100%' }} variant="outlined">
-                                        <InputLabel htmlFor="voucher-code-textfield">Enter Code</InputLabel>
+                                        <InputLabel htmlFor="voucher-code-textfield" style={{fontFamily: "Podkova, serif"}}>Enter Code</InputLabel>
                                         <OutlinedInput
                                             id="voucher-code-textfield"
                                             onChange={(newValue) => {
@@ -147,7 +147,7 @@ function Payment(props) {
                                         height: "100%",
 
                                         float: "right",
-
+                                        fontFamily: "Podkova, serif",
                                         fontWeight: "bold",
 
                                         backgroundColor: "#DF3131",
@@ -168,6 +168,7 @@ function Payment(props) {
                                 fullWidth
                                 sx={{
                                     color: "white",
+                                    fontFamily: "Podkova, serif",
                                     backgroundColor: "#00A944",
                                     "&:hover": {
                                         backgroundColor: "#008535",
