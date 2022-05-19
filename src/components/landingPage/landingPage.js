@@ -181,7 +181,7 @@ function LandingPage() {
                   />
                   <CardContent>
                     <Typography variant="body2" color="red">
-                      1 ~ 31 May 2022
+                      ไม่มีกำหนดการสิ้นอายุโปรโมชัน
                     </Typography>
                     <br />
                     <Typography gutterBottom variant="h5" component="div">

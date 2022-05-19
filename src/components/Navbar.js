@@ -6,21 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 function Navbar() {
     const navigate = useNavigate();
-    const user_data = {
-        "id": 1,
-        "username": "disorn.bootso2@gmail.com",
-        "firstName": "Nior",
-        "lastName": "Disorn",
-        "regisDate": "2022-04-09",
-        "totalMile": 0,
-        "role": "ROLE_PASSENGER",
-        "dob": "2001-08-07"
-    }
-
-    const fullName = user_data.firstName + " " + user_data.lastName;
     return (
         <div className='header'>
-            <YourSvg className='logo' onClick={() =>{navigate("../availableflight");}}/>
+            <YourSvg className='logo' onClick={() =>{navigate("../landingPage");}}/>
                
             <div className='user-button' item xs={4} >
                 <div className='user-icon'><UserSvg onClick={() =>{navigate("../profile");}}/></div>
