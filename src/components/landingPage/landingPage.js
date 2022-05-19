@@ -14,6 +14,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
 import mileimg from "./mileimg.svg";
+import covidimg from "./covidimg.svg";
+import birthdayimg from "./birthdayimg.svg";
 import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
@@ -91,67 +93,126 @@ function LandingPage() {
           </Box>
         </Card>
       </div>
-      <Grid container display="row" rowSpacing={3}>
+      <Grid container display="row" rowSpacing={5}>
         <div
           style={{ position: "relative", margin: "0 auto", textAlign: "left" }}
         >
-          <Grid container spacing={5}>
-          <Grid item xs={12}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="100%"
-                  image={mileimg}
-                  alt="mile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    บินแลกไมล์
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    สะสมไมล์เที่ยวบินเพื่อแลกตั๋ว บินฟรี ไม่ว่าจะเอเชีย ยุโรป
-                    หรือ อเมริกา ก็แลกได้
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary"  onClick={() =>{navigate("../mile");}}>
-                more details . .
-                </Button>
-              </CardActions>
-            </Card>
+          <Grid container item spacing={3}>
+            <Grid item xs={4}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="320"
+                    image={mileimg}
+                    alt="mile"
+                  />
+                  <CardContent>
+                    <Typography variant="body2" color="red">
+                      1 ~ 15 May 2022
+                    </Typography>
+                    <br />
+                    <Typography gutterBottom variant="h5" component="div">
+                      บินแลกไมล์
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      สะสมไมล์เที่ยวบินเพื่อแลกตั๋ว บินฟรี ไม่ว่าจะเอเชีย ยุโรป
+                      หรือ อเมริกา ก็แลกได้
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => {
+                      navigate("../mile");
+                    }}
+                  >
+                    more details . .
+                  </Button>
+                </CardActions>
+              </Card>
             </Grid>
-            <Grid item xs={12}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="100%"
-                  image={mileimg}
-                  alt="mile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    บินแลกไมล์
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    สะสมไมล์เที่ยวบินเพื่อแลกตั๋ว บินฟรี ไม่ว่าจะเอเชีย ยุโรป
-                    หรือ อเมริกา ก็แลกได้
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary"  onClick={() =>{navigate("../mile");}}>
-                more details . .
-                </Button>
-              </CardActions>
-            </Card>
+            <Grid item xs={4}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="320"
+                    image={covidimg}
+                    alt="covid"
+                  />
+                  <CardContent>
+                    <Typography variant="body2" color="red">
+                      1 ~ 15 May 2022
+                    </Typography>
+                    <br />
+                    <Typography gutterBottom variant="h5" component="div">
+                      เที่ยวสู้ COVID-19
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      ยุคโควิดเราไม่หวั่น กายพร้อม ใจพร้อมลุยเอเชีย ยุโรป หรือ
+                      อเมริกา
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => {
+                      navigate("../covid");
+                    }}
+                  >
+                    more details . .
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={4}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height="320"
+                    image={birthdayimg}
+                    alt="birthday"
+                  />
+                  <CardContent>
+                    <Typography variant="body2" color="red">
+                      1 ~ 31 May 2022
+                    </Typography>
+                    <br />
+                    <Typography gutterBottom variant="h5" component="div">
+                      สุขสันต์วันเกิด
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      ถึงเดือนเกิดทั้งทีต้องลาพัก ร้อนสักหน่อย ไม่ว่าจะเอเชีย
+                      ยุโรป หรือ อเมริกา
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => {
+                      navigate("../birthday");
+                    }}
+                  >
+                    more details . .
+                  </Button>
+                </CardActions>
+              </Card>
             </Grid>
           </Grid>
         </div>
+
+        <Grid item xs={12}>
+          <Footerr />
+        </Grid>
       </Grid>
-      <Footerr />
     </div>
   );
 }
