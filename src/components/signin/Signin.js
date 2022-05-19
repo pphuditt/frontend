@@ -57,7 +57,7 @@ function Signin() {
     .then((response) => {
       if (response.data.jwt) {
         localStorage.setItem("user", JSON.stringify(response.data));
-        navigate('../availableflight');
+        navigate('../landingPage');
       }
     });
 };

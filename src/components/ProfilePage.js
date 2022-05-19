@@ -33,16 +33,12 @@ function ProfilePage() {
         }).then((res) => {
             setProfile(res.data)
         });
-        axios.get('http://localhost:8080/api/voucher/user/individual',{
-            headers : authHeader()
-        }).then((res) => {
-            setTable(res.data);
-        });
-        // api.get('voucher/user/individual',{
-            // headers : authHeader()
-        // }).then((res) => {
-            // setTable(res.data);
-        // });
+        
+       api.get('voucher/user/individual',{
+             headers : authHeader()
+         }).then((res) => {
+             setTable(res.data);
+         });
     },[]);
 
     return (
@@ -50,47 +46,47 @@ function ProfilePage() {
             <Navbar />
             <div className='profile-background' />
             <img className='profilepic' src={profilepic} alt='profilepic' />
-            <h1 className='name'>{profile.fullName}</h1>
+            <h1 style={{fontFamily: "Podkova, serif"}} className='name'>{profile.fullName}</h1>
             <div className='user-detail'>
                 <table className='table'>
                     <tbody>
                         <tr>
-                            <td className='profile-left-col'><h3>Email</h3></td>
-                            <td><p>{profile.username}</p></td>
+                            <td style={{fontFamily: "Podkova, serif"}} className='profile-left-col'><h3>Email</h3></td>
+                            <td style={{fontFamily: "Podkova, serif"}}><p>{profile.username}</p></td>
                         </tr>
                         <tr>
-                            <td className='profile-left-col'><h3>Birth date</h3></td>
-                            <td><p>{profile.DOB}</p></td>
+                            <td style={{fontFamily: "Podkova, serif"}} className='profile-left-col'><h3>Birth date</h3></td>
+                            <td style={{fontFamily: "Podkova, serif"}}><p>{profile.DOB}</p></td>
                         </tr>
                         <tr>
-                            <td className='profile-left-col'><h3>Total mile</h3></td>
-                            <td><p>{profile.totalMile}</p></td>
+                            <td style={{fontFamily: "Podkova, serif"}} className='profile-left-col'><h3>Total mile</h3></td>
+                            <td style={{fontFamily: "Podkova, serif"}}><p>{profile.totalMile}</p></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2>My voucher</h2>
+                <h2 style={{fontFamily: "Podkova, serif"}}>My voucher</h2>
                 <table className='table voucher'>
                     <thead className='voucher-header-table'>
                         <tr>
-                            <th>Promotion</th>
-                            <th>Code</th>
-                            <th>Expiration date</th>
+                            <th style={{fontFamily: "Podkova, serif"}}>Promotion</th>
+                            <th style={{fontFamily: "Podkova, serif"}}>Code</th>
+                            <th style={{fontFamily: "Podkova, serif"}}>Expiration date</th>
                         </tr>
                     </thead>
                     <tbody>
                         {table.map((row) => {
                             return (
                                 <tr className='voucher-row'>
-                                    <td>{row.title}</td>
-                                    <td>{row.code}</td>
-                                    <td>{moment(row.valid_until).format('dddd, MMMM Do YYYY, h:mm:ss a')}</td>
+                                    <td style={{fontFamily: "Podkova, serif"}}>{row.title}</td>
+                                    <td style={{fontFamily: "Podkova, serif"}}>{row.code}</td>
+                                    <td style={{fontFamily: "Podkova, serif"}}>{moment(row.valid_until).format('dddd, MMMM Do YYYY, h:mm:ss a')}</td>
                                 </tr>
                             );
                         })}
                     </tbody>
                 </table>
-                <Button variant="contained" onClick={signOut} color="error">Logout</Button>
+                <Button variant="contained" onClick={signOut} style={{fontFamily: "Podkova, serif"}} color="error">Logout</Button>
             </div>
             <Footerr />
         </div>

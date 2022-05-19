@@ -12,7 +12,14 @@ const ManagementPage = () => {
     const selector = edit_obj[page];
     const temp = ["fi","user","ticket"];
     const showAdd = temp.includes(page) ?  "":<CustomDialog isedit={false} page={page}>{selector}</CustomDialog>;
-
+    const user = JSON.parse(localStorage.getItem("user"));
+    if(!user.role.includes("ROLE_MANAGER","ROLE_ADMIN")){
+      return (
+          <div>
+              You have no access.
+          </div>
+      );
+  }
     return (
         <div className="App">
         <Sidebar/>
