@@ -27,12 +27,6 @@ import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
 import Flight from './components/Flight';
 
-import Flight from './components/Flight'
-<<<<<<< HEAD
-import Income from './Component/Income'
-=======
->>>>>>> 43744039f74a879dcac5871da3d89ae729539746
-
 
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')
@@ -65,7 +59,7 @@ function App() {
         <Route path='profile' element={<ProfilePage />} />
         <Route path='flightNotFound' element={<NotFoundPage />} />
         <Route path='payment' element={<Payment />} />
-        <Route path='availableFlight' element={<Flight />}></Route>
+        <Route path='search/:msg' element={<Flight />}></Route>
         <Route path='landingPage' element={<LandingPage />} />
         <Route path='*' element={<NotFound/>}/>
       </Routes>

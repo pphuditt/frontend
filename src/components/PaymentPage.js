@@ -16,10 +16,25 @@ import linepic from '../statics/images/linepic-payment.svg';
 import Navbar from './Navbar';
 import Footerr from './Footerr';
 import { Card, Grid, Button } from '@mui/material';
+import {useLocation} from 'react-router-dom';
+import moment from 'moment';
+import axios from 'axios';
 
 function Payment(props) {
 
-    const {takenTime, fromAirport, fromCountry, fromAirportCode,fromDate, fromTime, toAirport, toCountry, toAirportCode, toDate, toTime, amount} = props;
+    const location = useLocation();
+    const {data} = location.state;
+    const tmp = moment(data.flightDate);
+    const takenTime = data.takenTime;
+    const fromAirport = data.from;
+    const fromTimeZone = data.fromTimezone.split("/")[1].replace('_','');
+    const fromDate = tmp.format("ddd D MMM YYYY");
+    const fromTime = tmp.format('h:mm a');
+    const toAirport = data.to;
+    const toTimezone = data.toTimezone.split("/")[1].replace('_','');
+    const toDate = tmp.add(takenTime,'m').format("ddd D MMM YYYY");
+    const toTime = tmp.add(takenTime,'m').format("h:mm a");
+    const fare = data.fare;
 
     const timeAbroad = takenTime / 60 + " hrs";
 
@@ -27,7 +42,7 @@ function Payment(props) {
     const [voucherCode, setVoucherCode] = React.useState("");
 
     const discount = () => {
-        api.get(`voucher/use/${voucherCode}`, {
+        axios.get(`http://localhost:8080/api/voucher/use/${voucherCode}`, {
             headers: authHeader()
         })
             .then((response) => {
@@ -37,6 +52,17 @@ function Payment(props) {
                 alert("error", error.response.status);
             });
     };
+
+    const submit = () => {
+        axios.post(`http://localhost:8080/api/ticket`,{
+            instanceId : data.instanceId,
+            voucherCode : voucherCode===null? null:voucherCode,
+        },{
+            headers: authHeader()
+        }).then((res)=>{
+            alert("รายละเอียดการจองตั๋วจะถูกส่งไปยังอีเมลของท่าน");
+        });
+    }
 
     return (
         <div className="payment-main-body">
@@ -56,23 +82,21 @@ function Payment(props) {
                             <img className='plane-icon' src={planeIcone} alt='plane-icon' />
                             <div className='payment-flight-detail'>
                                 <div className='src-airport'>
-                                    <h2>{fromTime} <span className='payment-country'>{fromCountry}</span></h2>
+                                    <h2>{fromTime} <span className='payment-country'>{fromTimeZone}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
                                     <h2 className='payment-flight-date'>{fromDate}</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>{fromAirportCode}</h2>
-                                        <p className='payment-airport-detail'><b>{fromAirport}</b></p>
+                                        <h2 className='payment-airport-detail'>{fromAirport}</h2>
                                     </div>
                                 </div>
                                 <p className='payment-time-abroad'>{timeAbroad}</p>
                                 <img className='linepic' src={linepic} alt='linepic' />
                                 <div className='dest-airport'>
-                                    <h2>{toTime} <span className='payment-country'>{toCountry}</span></h2>
+                                    <h2>{toTime} <span className='payment-country'>{toTimezone}</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
                                     <h2 className='payment-flight-date'>{toDate}</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>{toAirportCode}</h2>
-                                        <p className='payment-airport-detail'><b>{toAirport}</b></p>
+                                        <h2 className='payment-airport-detail'>{toAirport}</h2>
                                     </div>
                                 </div>
                             </div>
@@ -89,16 +113,16 @@ function Payment(props) {
                                 <h3 className='payment-price-header'>รายละเอียดราคา</h3>
                                 <table className='price-detail-table'>
                                     <tr className='payment-price-detail-row'>
-                                        <td><p className='price-detail'>ขาไป ({fromAirportCode} {toAirportCode})</p></td>
-                                        <td><p className='price-detail rightCol'>THB {amount}</p></td>
+                                        <td><p className='price-detail'>ราคาตั๋วจาก ({fromAirport+" "+toAirport})</p></td>
+                                        <td><p className='price-detail rightCol'>THB {fare}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row discount'>
                                         <td><p className='price-detail'>ส่วนลด</p></td>
                                         <td><p className='price-detail rightCol'>{discountAmount}</p></td>
                                     </tr>
                                     <tr className='payment-price-detail-row'>
-                                        <td><p className='price-detail'>ราคารวมทั้งหมด</p></td>
-                                        <td><p className='price-detail rightCol'>THB {amount-discountAmount}</p></td>
+                                        <td><p className='price-detail'>ราคาสุทธิ</p></td>
+                                        <td><p className='price-detail rightCol'>THB {fare-discountAmount}</p></td>
                                     </tr>
                                 </table>
                             </Card>
@@ -150,6 +174,7 @@ function Payment(props) {
                                         boxShadow: "none",
                                     }
                                 }}
+                                onClick={submit}
                             >ยืนยันคำสั่งซื้อ</Button>
                         </div>
                     </Grid>
