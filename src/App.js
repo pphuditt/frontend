@@ -27,6 +27,12 @@ import FlightForm from './Component/Popup/FlightForm';
 import RouteForm from './Component/Popup/RouteForm';
 import Flight from './components/Flight';
 
+import Flight from './components/Flight'
+<<<<<<< HEAD
+import Income from './Component/Income'
+=======
+>>>>>>> 43744039f74a879dcac5871da3d89ae729539746
+
 
 // const timeFunc = () => {
 //   console.log(Temporal.TimeZone.from('Asia/Tokyo')

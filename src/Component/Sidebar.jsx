@@ -16,6 +16,7 @@ const Sidebar = () => {
             </div>
             <div className='center'>
                 <ul>
+                    <hr></hr>
                     <NewLink to='../dashboard/aircraft'><li>Aircraft</li></NewLink>
                     <NewLink to='../dashboard/airport'><li>Airport</li></NewLink>
                     <NewLink to='../dashboard/country'><li>Country</li></NewLink>
