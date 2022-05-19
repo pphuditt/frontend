@@ -50,7 +50,7 @@
 .payment-time-abroad {
     position: absolute;
     left: 24px;
-    top: 208px;
+    top: 188px;
 }
 
 .payment-price-header {
@@ -85,6 +85,10 @@
 
 .discount {
     color: #DF3131;
+}
+
+.bottomBlank {
+    margin-bottom: 48px;
 }
 
 .voucher-code-textfield {
