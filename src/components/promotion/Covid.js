@@ -8,14 +8,19 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { api } from "../../service/api";
+import authHeader from '../../service/AuthProvider.js';
 
 const voucher= (id) =>{
+
   api.post("voucher",{
     promotionId: id
+  },{
+    headers : authHeader()
   })
   .then((response)=>{
     if(response.status===200) alert("แลกแล้ว");
-    else alert("แลกไม่ได้จ้า");
+  }).catch((error)=>{
+    alert("แลกไม่ได้จ้า");
   });
 };
 
@@ -64,7 +69,6 @@ function Covid() {
                     variant="h6"
                     color="text.secondary"
                   >
-                    ระยะเวลาในการจอง : 2100-01-01<br />
                     รายละเอียดส่วนลด : ทวีปยุโรป ส่วนลด 5,000THB <br />
                   </Typography>
                   <Typography
