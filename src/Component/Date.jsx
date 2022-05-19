@@ -30,9 +30,9 @@ const DateTest = () => {
 
     return (
         <div>
-            <Button variant="contained" onClick={signIn} color="success">Login</Button>
-            <Button variant="contained" onClick={signOut} color="error">Logout</Button>
-            <Button variant="contained" onClick={getTest} >getTest</Button>
+            {/* <Button variant="contained" onClick={signIn} color="success">Login</Button> */}
+            {/* <Button variant="contained" onClick={signOut} color="error">Logout</Button> */}
+            {/* <Button variant="contained" onClick={getTest} >getTest</Button> */}
         </div>
     );
 };
