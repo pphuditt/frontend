@@ -19,6 +19,37 @@ import { Card, Grid, Button } from '@mui/material';
 
 function Payment() {
 
+    const route = {
+        "code": "CU100",
+        "fromAirport": "BKK",
+        "toAirport": "NRT",
+        "distance": 2886,
+        "takenTime": 300
+    };
+
+    const airport1 = {
+        "code": "NRT",
+        "countryCode": "JPN",
+        "latitude": 35.765786,
+        "longitude": 140.386347,
+        "name": "Narita International Airport",
+        "timeZone": "Asia/Tokyo"
+    };
+
+    const airport2 = {
+        "code": "BKK",
+        "countryCode": "THA",
+        "latitude": 13.69269,
+        "longitude": 100.750465,
+        "name": "Suvarnabhumi Airport",
+        "timeZone": "Asia/ Bangkok"
+    };
+
+    const timeAbroad = route.takenTime / 60 + " hrs";
+    const startAirportCode = route.fromAirport;
+    const destAirportCode = route.toAirport;
+
+
     const [discountAmount, setDiscountAmount] = React.useState(0);
     const [voucherCode, setVoucherCode] = React.useState("");
 
@@ -55,19 +86,19 @@ function Payment() {
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
                                     <h2 className='payment-flight-date'>MON 28 MAR 2022</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>BKK</h2>
+                                        <h2 className='payment-airport-detail'>{startAirportCode}</h2>
                                         <p className='payment-airport-detail'><b>Suvarnabhumi</b></p>
                                         <p className='payment-airport-detail'><b>International Airport</b></p>
                                     </div>
                                 </div>
-                                <p className='payment-time-abroad'>3 hrs</p>
+                                <p className='payment-time-abroad'>{timeAbroad}</p>
                                 <img className='linepic' src={linepic} alt='linepic' />
                                 <div className='dest-airport'>
                                     <h2>11:30 <span className='payment-country'>INDIA</span></h2>
                                     <img className='calendar-pic' src={calendar} alt='calendar-pic' />
                                     <h2 className='payment-flight-date'>MON 28 MAR 2022</h2>
                                     <div className='payment-airport-start'>
-                                        <h2 className='payment-airport-detail'>BKK</h2>
+                                        <h2 className='payment-airport-detail'>{destAirportCode}</h2>
                                         <p className='payment-airport-detail'><b>Suvarnabhumi</b></p>
                                         <p className='payment-airport-detail'><b>International Airport</b></p>
                                     </div>
@@ -109,7 +140,7 @@ function Payment() {
                                             onChange={(newValue) => {
                                                 console.log(newValue.target.value);
                                                 setVoucherCode(newValue.target.value);
-                                              }}
+                                            }}
                                             label="VoucherCode"
                                         />
                                     </FormControl>
@@ -118,13 +149,15 @@ function Payment() {
                                     <Button sx={{
                                         color: "white",
                                         height: "100%",
+                                        fontWeight: "bold",
                                         backgroundColor: "#DF3131",
                                         "&:hover": {
                                             backgroundColor: "#ad0202",
                                             boxShadow: "none",
                                         }
                                     }}
-                                    onClick={discount}>
+                                        fullWidth
+                                        onClick={discount}>
                                         check code
                                     </Button>
                                 </Grid>
@@ -144,7 +177,7 @@ function Payment() {
                         </div>
                     </Grid>
                 </Grid>
-                <div className='payment-page-spacing' />
+                <div className='payment-page-spacing bottomBlank' />
             </Grid>
             <Footerr />
         </div >

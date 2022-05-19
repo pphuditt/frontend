@@ -87,6 +87,10 @@
     color: #DF3131;
 }
 
+.bottomBlank {
+    margin-bottom: 48px;
+}
+
 .voucher-code-textfield {
     margin: 100px 0;
 }
