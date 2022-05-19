@@ -16,7 +16,6 @@ const Sidebar = () => {
             </div>
             <div className='center'>
                 <ul>
-                    <NewLink to='../income'><li>Income</li></NewLink>
                     <hr></hr>
                     <NewLink to='../dashboard/aircraft'><li>Aircraft</li></NewLink>
                     <NewLink to='../dashboard/airport'><li>Airport</li></NewLink>
